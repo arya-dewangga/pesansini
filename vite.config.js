@@ -24,12 +24,12 @@ export default defineConfig({
         theme_color: '#ffffff',
         icons: [
           {
-            src: 'pwa-icon.svg',
+            src: 'pesansini-favicon.svg',
             sizes: '192x192',
             type: 'image/svg+xml'
           },
           {
-            src: 'pwa-icon.svg',
+            src: 'pesansini-favicon.svg',
             sizes: '512x512',
             type: 'image/svg+xml'
           }

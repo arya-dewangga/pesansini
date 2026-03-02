@@ -1,0 +1,2940 @@
+<!-- Host Login - Phone Auth -->
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Host Login - No/WA &amp; Password</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f48c25",
+                        "primary-dark": "#d97715",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#221910",
+                        "ramadan-green": "#e6f0eb", // Soft sage green for background accents
+                        "ramadan-green-dark": "#1a2e22",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" },
+                    backgroundImage: {
+                        'batik-pattern': "url(\"data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23f48c25' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E\")",
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark min-h-screen flex items-center justify-center relative overflow-hidden font-display antialiased text-gray-800 dark:text-gray-100">
+    <div class="absolute inset-0 bg-batik-pattern pointer-events-none z-0"></div>
+    <div
+        class="absolute top-0 right-0 -mr-16 -mt-16 w-64 h-64 rounded-full bg-ramadan-green dark:bg-ramadan-green-dark blur-3xl opacity-60 z-0">
+    </div>
+    <div class="absolute bottom-0 left-0 -ml-16 -mb-16 w-64 h-64 rounded-full bg-primary/10 blur-3xl opacity-60 z-0">
+    </div>
+    <main
+        class="w-full max-w-md h-full min-h-screen sm:min-h-0 sm:h-auto sm:rounded-xl relative z-10 flex flex-col justify-between p-6 sm:p-8 sm:bg-white/80 sm:backdrop-blur-xl sm:shadow-2xl sm:dark:bg-background-dark/80 sm:border sm:border-white/20">
+        <div class="flex-1 flex flex-col justify-center items-center text-center mt-10 sm:mt-0 space-y-6">
+            <div class="relative group">
+                <div
+                    class="absolute inset-0 bg-primary/20 rounded-full blur-xl transform group-hover:scale-110 transition-transform duration-500">
+                </div>
+                <div
+                    class="relative w-32 h-32 bg-gradient-to-br from-white to-ramadan-green dark:from-gray-800 dark:to-ramadan-green-dark rounded-full shadow-lg flex items-center justify-center border-4 border-white dark:border-gray-700">
+                    <img alt="Stylized Ketupat or geometric Islamic pattern"
+                        class="w-20 h-20 object-contain drop-shadow-md opacity-90 rounded-xl"
+                        data-alt="Stylized Ketupat or geometric Islamic pattern"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtj98_7zVHUg7JKNGPQshw7NwCFlZ_-ZjOrqgSD79iS7aIrO8RvKsiKvAXN-vnjYvdUnv7OJWFqadBxDdIcZuL2IXiNa1SOxELsjpZfMDm0CKgVHVZVNV_6wnv6yg9fneVGLOMrbk0CJ_t4tWNL-lSBX5PT81kFWSN4PMa5y-7ctuG3MdRd76WfQRhYKwiQg3sHYkNLdHHBb61PVLEPKqVBZDRMtPhmUfewcvPAcGS53SLvY8I36_lldUHcauqnpzhEW0sBgUNaqRg" />
+                </div>
+                <div class="absolute -bottom-2 -right-2 bg-primary text-white p-2 rounded-full shadow-lg">
+                    <span class="material-icons-round text-xl">restaurant_menu</span>
+                </div>
+            </div>
+            <div class="space-y-2 max-w-xs mx-auto">
+                <h1 class="text-3xl font-extrabold text-gray-900 dark:text-white tracking-tight">
+                    Mulai <span class="text-primary">Buka Bersama</span>
+                </h1>
+                <p class="text-gray-500 dark:text-gray-400 text-sm font-medium leading-relaxed">
+                    Masuk sebagai Host untuk mengatur pesanan grup buka puasa dengan mudah.
+                </p>
+            </div>
+        </div>
+        <div class="w-full space-y-6 mt-8 mb-4">
+            <div class="space-y-2">
+                <label class="block text-sm font-semibold text-gray-700 dark:text-gray-300 ml-4" for="phone">
+                    Nomor WhatsApp / HP
+                </label>
+                <div class="relative flex items-center group">
+                    <div
+                        class="absolute left-1 top-1 bottom-1 flex items-center pl-4 pr-3 bg-ramadan-green/50 dark:bg-ramadan-green-dark/50 rounded-l-full rounded-r-lg border-r border-gray-200 dark:border-gray-700 z-10 transition-colors group-focus-within:bg-primary/10 group-focus-within:border-primary/30">
+                        <img alt="Indonesian Flag" class="w-6 h-4 object-cover rounded shadow-sm mr-2"
+                            data-alt="Indonesian Flag"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeocqNUJssujBGOdONS6dqJzAmqyEhIhJPyTJ-G__eh-leSImfRWhxQ2hjvucADGJCxagUe65m8yEHA_u5Nb4p63K2fYEdOYQYXtJ8cyUFkh02jGK2mPXX73yuv6QpL-Hr2gTpIFkdyuPH-SxAWPYgmTE4559ktjgBn2I3DPRgvzwqMMZdjiNGzVd1vidlwBCxO-wDP3ty2WNUs6UjekEHWYtjqTPm1wMwsqZoifALB3NF0TOsz6EKiBtGVmrr81hlPMU5O5gAVF5I" />
+                        <span class="text-gray-700 dark:text-gray-200 font-bold text-base tracking-wide">+62</span>
+                    </div>
+                    <input autocomplete="tel"
+                        class="w-full pl-28 pr-6 py-4 bg-white dark:bg-gray-800 border-2 border-gray-100 dark:border-gray-700 rounded-full text-lg font-semibold text-gray-900 dark:text-white placeholder-gray-300 dark:placeholder-gray-600 focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all duration-300 shadow-sm"
+                        id="phone" inputmode="numeric" placeholder="812-3456-7890" type="tel" />
+                </div>
+            </div>
+            <div class="space-y-2">
+                <div class="flex items-center justify-between ml-4 mr-2">
+                    <label class="block text-sm font-semibold text-gray-700 dark:text-gray-300" for="password">
+                        Kata Sandi
+                    </label>
+                </div>
+                <div class="relative flex items-center group">
+                    <div
+                        class="absolute left-4 top-0 bottom-0 flex items-center text-gray-400 dark:text-gray-500 pointer-events-none">
+                        <span class="material-icons-round">lock</span>
+                    </div>
+                    <input autocomplete="current-password"
+                        class="w-full pl-12 pr-12 py-4 bg-white dark:bg-gray-800 border-2 border-gray-100 dark:border-gray-700 rounded-full text-lg font-medium text-gray-900 dark:text-white placeholder-gray-300 dark:placeholder-gray-600 focus:outline-none focus:border-primary focus:ring-4 focus:ring-primary/10 transition-all duration-300 shadow-sm"
+                        id="password" placeholder="Masukkan kata sandi" type="password" />
+                    <button
+                        class="absolute right-4 text-gray-400 hover:text-primary transition-colors focus:outline-none p-1 rounded-full hover:bg-gray-100 dark:hover:bg-gray-700"
+                        type="button">
+                        <span class="material-icons-round text-xl">visibility_off</span>
+                    </button>
+                </div>
+                <div class="flex justify-end pt-1 mr-2">
+                    <a class="text-sm font-semibold text-primary hover:text-primary-dark hover:underline transition-colors"
+                        href="#">
+                        Lupa Kata Sandi?
+                    </a>
+                </div>
+            </div>
+            <button
+                class="w-full py-4 px-6 bg-primary hover:bg-primary-dark active:scale-[0.98] text-white rounded-full shadow-lg shadow-primary/25 flex items-center justify-center space-x-2 transition-all duration-300 group mt-4">
+                <span class="text-lg font-bold tracking-wide">Masuk</span>
+                <span class="material-icons-round group-hover:translate-x-1 transition-transform">login</span>
+            </button>
+        </div>
+        <div class="mt-auto text-center space-y-4 pb-4">
+            <p class="text-xs text-gray-400 dark:text-gray-500 max-w-xs mx-auto leading-relaxed">
+                Dengan masuk, Anda menyetujui <a class="text-primary hover:underline font-semibold" href="#">Syarat
+                    &amp; Ketentuan</a> serta <a class="text-primary hover:underline font-semibold" href="#">Kebijakan
+                    Privasi</a> kami.
+            </p>
+            <div class="pt-2 border-t border-gray-100 dark:border-gray-800 w-2/3 mx-auto">
+                <button
+                    class="text-sm font-semibold text-gray-500 hover:text-primary transition-colors flex items-center justify-center gap-1 mx-auto">
+                    <span class="material-icons-round text-base">help_outline</span>
+                    Butuh Bantuan?
+                </button>
+            </div>
+        </div>
+    </main>
+
+</body>
+
+</html>
+
+<!-- Host Dashboard -->
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Host Dashboard - Buka Puasa App</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f48c25",
+                        "primary-dark": "#d6761b",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#221910",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2d241b",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px", "2xl": "1.5rem", "3xl": "2rem" },
+                    boxShadow: {
+                        'soft': '0 10px 40px -10px rgba(244, 140, 37, 0.1)',
+                        'card': '0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02)',
+                        'fab': '0 20px 25px -5px rgba(244, 140, 37, 0.4), 0 10px 10px -5px rgba(244, 140, 37, 0.2)',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        /* Custom scrollbar hiding for clean mobile look */
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        /* Smooth fade in animation */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-fade-in {
+            animation: fadeIn 0.4s ease-out forwards;
+        }
+
+        .delay-100 {
+            animation-delay: 0.1s;
+        }
+
+        .delay-200 {
+            animation-delay: 0.2s;
+        }
+
+        .delay-300 {
+            animation-delay: 0.3s;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-100 min-h-screen relative overflow-hidden flex flex-col items-center">
+    <!-- Mobile Container -->
+    <div
+        class="w-full max-w-md h-full min-h-screen bg-background-light dark:bg-background-dark relative shadow-2xl overflow-y-auto pb-24">
+        <!-- Status Bar Placeholder -->
+        <div class="h-12 w-full flex justify-between items-center px-6 pt-2">
+            <span class="text-sm font-semibold">9:41</span>
+            <div class="flex gap-1.5">
+                <div class="w-4 h-4 rounded-full bg-gray-900 dark:bg-white opacity-20"></div>
+                <div class="w-4 h-4 rounded-full bg-gray-900 dark:bg-white opacity-20"></div>
+                <div class="w-6 h-3 rounded-full border border-gray-900 dark:border-white opacity-40"></div>
+            </div>
+        </div>
+        <!-- Header Section -->
+        <header class="px-6 pt-4 pb-2 flex justify-between items-start animate-fade-in">
+            <div>
+                <p class="text-sm font-medium text-gray-500 dark:text-gray-400 mb-1">Selamat Berbuka,</p>
+                <h1 class="text-2xl font-bold text-gray-900 dark:text-white leading-tight">Halo, Rizky! 👋</h1>
+            </div>
+            <div class="relative group cursor-pointer">
+                <div
+                    class="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full border-2 border-background-light dark:border-background-dark z-10">
+                </div>
+                <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-primary/20 p-0.5">
+                    <img alt="Profile Avatar" class="w-full h-full object-cover rounded-full"
+                        data-alt="Smiling man portrait avatar"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBg0o-uTpbU8d17uJ1iG0ZU-K9MRCPpp5jNm_oinfxGtJK_kngLC-3ZQLmj_pJcjF054xkQJb1cCnonz1zJpui04-yCWZxNVv_IvojlZKaPE8m7fTU5UZTLVSrXvv9kYqBJJoR1JyktxbuQl9rggPRPrx2TMP6N9Xml5LvJAGUj_AEMXQVIGQuSdpDgQUdw3q4rvTsC4x_77ulDQWGezwz5HxyBA8yhjODVz9xxAtec0MYttOoFtdac76DwZwFAGhllK7oSW8ByaP6Z" />
+                </div>
+            </div>
+        </header>
+        <!-- Stats Summary -->
+        <section class="px-6 py-4 animate-fade-in delay-100">
+            <div
+                class="bg-primary/10 dark:bg-primary/5 rounded-3xl p-6 flex items-center justify-between relative overflow-hidden">
+                <!-- Decorative background shapes -->
+                <div class="absolute -right-4 -top-4 w-24 h-24 bg-primary/20 rounded-full blur-2xl"></div>
+                <div class="relative z-10">
+                    <h2 class="text-3xl font-extrabold text-primary">3</h2>
+                    <p class="text-sm font-semibold text-gray-700 dark:text-gray-300">Active Rooms</p>
+                </div>
+                <div class="h-10 w-px bg-primary/20 mx-4"></div>
+                <div class="relative z-10">
+                    <h2 class="text-3xl font-extrabold text-primary">12</h2>
+                    <p class="text-sm font-semibold text-gray-700 dark:text-gray-300">Orders Today</p>
+                </div>
+                <button
+                    class="bg-white dark:bg-surface-dark p-3 rounded-full shadow-sm text-primary hover:bg-gray-50 transition-colors ml-4">
+                    <span class="material-icons-round text-xl">notifications</span>
+                </button>
+            </div>
+        </section>
+        <!-- Section Title -->
+        <div class="px-6 mt-4 mb-2 flex justify-between items-end animate-fade-in delay-200">
+            <h3 class="text-lg font-bold text-gray-900 dark:text-white">Your Active Gatherings</h3>
+            <button class="text-xs font-semibold text-primary hover:text-primary-dark transition-colors">View
+                History</button>
+        </div>
+        <!-- Room Cards List -->
+        <main class="px-6 space-y-4 pb-20 animate-fade-in delay-300">
+            <!-- Card 1: Urgent -->
+            <div
+                class="bg-white dark:bg-surface-dark rounded-3xl p-5 shadow-card border border-gray-100 dark:border-gray-800 relative group active:scale-[0.98] transition-transform duration-200">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span
+                                class="px-2.5 py-1 rounded-full bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-wider">Open</span>
+                            <span class="text-[10px] text-gray-400 font-medium">#BK-2023-01</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-0.5">Marketing Team Bukber</h4>
+                        <div class="flex items-center text-gray-500 dark:text-gray-400 text-sm">
+                            <span class="material-icons-round text-base mr-1">restaurant</span>
+                            Sate Khas Senayan
+                        </div>
+                    </div>
+                    <!-- Countdown Circle -->
+                    <div
+                        class="flex flex-col items-center justify-center bg-red-50 dark:bg-red-900/20 text-red-600 dark:text-red-400 w-16 h-16 rounded-2xl border border-red-100 dark:border-red-900/30">
+                        <span class="text-xs font-bold">12m</span>
+                        <span class="text-[9px] uppercase font-bold opacity-80">Left</span>
+                    </div>
+                </div>
+                <div class="w-full h-px bg-gray-100 dark:bg-gray-800 my-4"></div>
+                <div class="flex justify-between items-center">
+                    <div class="flex -space-x-2 overflow-hidden">
+                        <img alt=""
+                            class="inline-block h-8 w-8 rounded-full ring-2 ring-white dark:ring-surface-dark object-cover"
+                            data-alt="Portrait of a woman"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBP36txgL1kYEgelnx6UHXS15_XARxVHmbjx8aoFSweacAgfkwfocfrKgH2iBSkMN8foudz_e6PTKkAEZIHI2BrVUYf3srb-9-xyy2uO2p5MF1tmcqzILvTWPQwV3siyBlOL19XMZicFtQOyeRT14WgfLbipJ88wGS2u2Eakf6onY4o7b2vJz2et7wzY1liVE17GvjUml4kLYaaGv8YQKKRpJFCoGoHrgOD6bx-ffmwAeaDE9NC2GIiFkv1GuUgJO_4UgGCW_iBRIgQ" />
+                        <img alt=""
+                            class="inline-block h-8 w-8 rounded-full ring-2 ring-white dark:ring-surface-dark object-cover"
+                            data-alt="Portrait of a man"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVOkngYE4gpgr08SDO4UbiA0Z6WrB0a3FqVgxaWX_KeaaCqBzuDclFRpm4NkgOOgp3Kw2VR1P7cq2_OYxA3iIOYNJIEF4_SY2KtOZsa6QYTK0yjDZ-Phkh4-TafNQq1GQzbD_qvD5IpO6keXO785QfVo2jGvDnqZP2EmB1EbxLICWD0UF0lb3qZnxo2C8KHcpVMnI4DlGUTrjZAb5oNDniJ88HV7GgdcxfvVrCs2oNwx8sLw-Zyuh6qhyx9aeqUOTNacMOYqC81VRE" />
+                        <img alt=""
+                            class="inline-block h-8 w-8 rounded-full ring-2 ring-white dark:ring-surface-dark object-cover"
+                            data-alt="Portrait of a woman"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPW2rnb13Db5DC5gbpqrriU2ScDUbxoYvk5_e12SJ9046qdvGCHcO2xNtXDv3PhwX1F0HHgWFyHhcSfQotWuVrUV-qs0awgs3aSQWdqQDRHPHhsTDpw98u2rrU9whajgtgM2qZenPQQOo7rWqlcn_d7jr4YA8TtLQWDIzk5mr7KYFbX0q7m0kAK8eJSyVz63s-V4DD43kMpuhN_7_G7yGc18e2uPJAG1yfzK6gjgf0JFzXMvNlypHeYFW7KudlxEm7AqsRytCsuQur" />
+                        <div
+                            class="h-8 w-8 rounded-full ring-2 ring-white dark:ring-surface-dark bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-xs font-bold text-gray-600 dark:text-gray-300">
+                            +8
+                        </div>
+                    </div>
+                    <button
+                        class="flex items-center text-sm font-semibold text-gray-900 dark:text-white group-hover:text-primary transition-colors">
+                        Manage
+                        <span
+                            class="material-icons-round text-lg ml-1 transform group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    </button>
+                </div>
+            </div>
+            <!-- Card 2: Standard -->
+            <div
+                class="bg-white dark:bg-surface-dark rounded-3xl p-5 shadow-card border border-gray-100 dark:border-gray-800 relative group active:scale-[0.98] transition-transform duration-200">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span
+                                class="px-2.5 py-1 rounded-full bg-primary/10 text-primary text-[10px] font-bold uppercase tracking-wider">Open</span>
+                            <span class="text-[10px] text-gray-400 font-medium">#BK-2023-02</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-0.5">Family Reunion</h4>
+                        <div class="flex items-center text-gray-500 dark:text-gray-400 text-sm">
+                            <span class="material-icons-round text-base mr-1">restaurant</span>
+                            Pagi Sore Padang
+                        </div>
+                    </div>
+                    <!-- Countdown Circle -->
+                    <div
+                        class="flex flex-col items-center justify-center bg-primary/10 dark:bg-primary/20 text-primary w-16 h-16 rounded-2xl border border-primary/10">
+                        <span class="text-xs font-bold">01h</span>
+                        <span class="text-[9px] uppercase font-bold opacity-80">Left</span>
+                    </div>
+                </div>
+                <div class="w-full h-px bg-gray-100 dark:bg-gray-800 my-4"></div>
+                <div class="flex justify-between items-center">
+                    <div class="flex -space-x-2 overflow-hidden">
+                        <img alt=""
+                            class="inline-block h-8 w-8 rounded-full ring-2 ring-white dark:ring-surface-dark object-cover"
+                            data-alt="Portrait of a man"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuDC8fSkHz-_t8ZYRUMIwjnPNJtznC8ODqy2uJjxZPtpofbn-cWaozYt5mZ7S_vK-xnTNGr935NK_FYdArY2jrUN3AVm19gVFaYUaTvxRw4udM-5dv7VHRzLzAnmoQ2xQb5lmFbegkpczGXimpkYBpPh4m7GnmJ4XbP8tNolUgAD0EFJkC93q-CS0nTboSY-XxeLk-QA2Bnjqj30mDkxqWDyKh43qzWyel30vZYfAlsumt9-JfGJLidq_W0cwz4xIkNiQIQRzIhxdjCY" />
+                        <div
+                            class="h-8 w-8 rounded-full ring-2 ring-white dark:ring-surface-dark bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-xs font-bold text-gray-600 dark:text-gray-300">
+                            +3
+                        </div>
+                    </div>
+                    <button
+                        class="flex items-center text-sm font-semibold text-gray-900 dark:text-white group-hover:text-primary transition-colors">
+                        Manage
+                        <span
+                            class="material-icons-round text-lg ml-1 transform group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    </button>
+                </div>
+            </div>
+            <!-- Card 3: Standard -->
+            <div
+                class="bg-white dark:bg-surface-dark rounded-3xl p-5 shadow-card border border-gray-100 dark:border-gray-800 relative group active:scale-[0.98] transition-transform duration-200">
+                <div class="flex justify-between items-start mb-4">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-2 mb-1">
+                            <span
+                                class="px-2.5 py-1 rounded-full bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400 text-[10px] font-bold uppercase tracking-wider">Closing
+                                Soon</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-900 dark:text-white mb-0.5">Project Delta Iftar</h4>
+                        <div class="flex items-center text-gray-500 dark:text-gray-400 text-sm">
+                            <span class="material-icons-round text-base mr-1">restaurant</span>
+                            Bandar Djakarta
+                        </div>
+                    </div>
+                    <!-- Countdown Circle -->
+                    <div
+                        class="flex flex-col items-center justify-center bg-green-50 dark:bg-green-900/10 text-green-600 dark:text-green-400 w-16 h-16 rounded-2xl border border-green-100 dark:border-green-900/20">
+                        <span class="text-xs font-bold">45m</span>
+                        <span class="text-[9px] uppercase font-bold opacity-80">Left</span>
+                    </div>
+                </div>
+                <div class="w-full h-px bg-gray-100 dark:bg-gray-800 my-4"></div>
+                <div class="flex justify-between items-center">
+                    <div class="flex -space-x-2 overflow-hidden">
+                        <img alt=""
+                            class="inline-block h-8 w-8 rounded-full ring-2 ring-white dark:ring-surface-dark object-cover"
+                            data-alt="Portrait of a woman"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfMh4f0iddaaHAwsFv1FUXkcMYCyF5NUQtCFb_9_3Sc3HQ5UXQKcxU2A5UBroNvA1C_KxUkb0zynfaZMA8-gWLnJJ2FwGH92jzIZJa15ZZbzrSmoxxg3yObIv0zvzehmEF2pm9VY8PbPSGrW2iXtKVlxzgCUHiZICY-Euv7HLf574J56-TCv-pcpkJoEPbE9T1sS8AmiQcbXRuMWhyfjFUf5WHlHVV8oClQBnwsu4sdwCeDJcj4Vv8UbA118UfW7-qhkvXnrrPmrmg" />
+                        <img alt=""
+                            class="inline-block h-8 w-8 rounded-full ring-2 ring-white dark:ring-surface-dark object-cover"
+                            data-alt="Portrait of a man"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuEURKiJlWiJgMO9hxNHrFmAxYcVyhRm5LSGvYDY85GBZvEktcWYh94n1N-TNKMm2OMZz_Tl1j_pNlvoiMMpkB_kYNPw44BtQLJqZ8xmQ7aj54Fph3uXi_w2L4kg0P3X3Ne_wCzJi0kegh5HAVdcUh84LOltjA_G34Aga8st8g_3RriGnkyS9I5fcPbFjzzIMxFuld2SE1lESjfhgvimWG_Floml4RDNaNFNQuQ4d9JiKDFgkuKu9nbfwiRxCzkwMEK7T2KP1c7v4x" />
+                        <div
+                            class="h-8 w-8 rounded-full ring-2 ring-white dark:ring-surface-dark bg-gray-100 dark:bg-gray-700 flex items-center justify-center text-xs font-bold text-gray-600 dark:text-gray-300">
+                            +12
+                        </div>
+                    </div>
+                    <button
+                        class="flex items-center text-sm font-semibold text-gray-900 dark:text-white group-hover:text-primary transition-colors">
+                        Manage
+                        <span
+                            class="material-icons-round text-lg ml-1 transform group-hover:translate-x-1 transition-transform">arrow_forward</span>
+                    </button>
+                </div>
+            </div>
+            <!-- Empty State Helper (Hidden by default for this view, but ready) -->
+            <!-- <div class="py-12 flex flex-col items-center justify-center text-center">
+                <div class="bg-gray-100 dark:bg-gray-800 p-6 rounded-full mb-4">
+                    <span class="material-icons-round text-4xl text-gray-400">restaurant_menu</span>
+                </div>
+                <h4 class="text-lg font-bold text-gray-900 dark:text-white">No active rooms</h4>
+                <p class="text-gray-500 dark:text-gray-400 text-sm mt-1 max-w-[200px]">Start your first Buka Puasa gathering now!</p>
+            </div> -->
+            <!-- Bottom Spacer for Tab Bar -->
+            <div class="h-8"></div>
+        </main>
+        <!-- Floating Action Button -->
+        <div class="fixed bottom-24 right-6 z-30">
+            <button
+                class="group flex items-center justify-center bg-primary hover:bg-primary-dark text-white rounded-full w-14 h-14 md:w-auto md:h-12 md:px-6 shadow-fab transition-all duration-300 active:scale-95">
+                <span
+                    class="material-icons-round text-3xl md:text-2xl md:mr-2 transition-transform group-hover:rotate-90">add</span>
+                <span class="hidden md:inline font-bold">Buat Room Baru</span>
+                <!-- Mobile Only Tooltip/Label hack for context -->
+                <span
+                    class="absolute right-16 bg-gray-900 text-white text-xs px-2 py-1 rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap md:hidden">Create
+                    New Room</span>
+            </button>
+        </div>
+        <!-- Bottom Navigation -->
+        <nav
+            class="absolute bottom-0 w-full bg-white/90 dark:bg-surface-dark/90 backdrop-blur-lg border-t border-gray-100 dark:border-gray-800 px-6 py-4 flex justify-between items-center z-20">
+            <button class="flex flex-col items-center text-primary gap-1">
+                <span class="material-icons-round text-2xl">grid_view</span>
+                <span class="text-[10px] font-bold">Dashboard</span>
+            </button>
+            <button
+                class="flex flex-col items-center text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 gap-1 transition-colors">
+                <span class="material-icons-round text-2xl">history</span>
+                <span class="text-[10px] font-medium">History</span>
+            </button>
+            <button
+                class="flex flex-col items-center text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 gap-1 transition-colors">
+                <span class="material-icons-round text-2xl">person</span>
+                <span class="text-[10px] font-medium">Profile</span>
+            </button>
+        </nav>
+        <!-- Home Indicator Area -->
+        <div class="absolute bottom-1 left-0 right-0 flex justify-center z-30 pointer-events-none">
+            <div class="w-32 h-1 bg-gray-300 dark:bg-gray-600 rounded-full"></div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<!-- Registrasi User Baru -->
+<!DOCTYPE html>
+
+<html lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Registrasi User Baru - Buka Bersama</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#2bee2b",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#102210",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-slate-800 dark:text-slate-100 min-h-screen flex flex-col items-center justify-center p-4">
+    <!-- iOS Status Bar Placeholder (Visual only) -->
+    <div class="fixed top-0 left-0 right-0 h-12 flex justify-between items-center px-8 z-50 pointer-events-none">
+        <span class="text-xs font-semibold">9:41</span>
+        <div class="flex gap-1 items-center">
+            <span class="material-icons-round text-[14px]">signal_cellular_alt</span>
+            <span class="material-icons-round text-[14px]">wifi</span>
+            <span class="material-icons-round text-[14px]">battery_full</span>
+        </div>
+    </div>
+    <!-- Main Container -->
+    <main
+        class="w-full max-w-[400px] bg-white dark:bg-slate-900 shadow-2xl shadow-primary/10 rounded-xl overflow-hidden relative">
+        <!-- Decorative Top Pattern -->
+        <div class="absolute top-0 left-0 right-0 h-48 bg-gradient-to-b from-primary/20 to-transparent -z-10"></div>
+        <div class="p-8 pt-16">
+            <!-- Header Section -->
+            <header class="mb-10 text-center">
+                <div
+                    class="w-20 h-20 bg-primary/10 dark:bg-primary/20 rounded-full flex items-center justify-center mx-auto mb-6">
+                    <span class="material-icons-round text-primary text-4xl">restaurant</span>
+                </div>
+                <h1 class="text-3xl font-bold tracking-tight text-slate-900 dark:text-white mb-2">Registrasi Baru</h1>
+                <p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
+                    Koordinasi buka puasa jadi lebih mudah dan teratur bersama rekan Anda.
+                </p>
+            </header>
+            <!-- Registration Form -->
+            <form action="#" class="space-y-5">
+                <!-- Full Name Field -->
+                <div class="space-y-1.5">
+                    <label
+                        class="text-xs font-semibold text-slate-500 dark:text-slate-400 ml-4 uppercase tracking-wider">Nama
+                        Lengkap</label>
+                    <div class="relative group">
+                        <span
+                            class="material-icons-round absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors text-[20px]">person</span>
+                        <input
+                            class="w-full pl-12 pr-4 py-4 bg-slate-50 dark:bg-slate-800 border-none rounded-full ring-1 ring-slate-200 dark:ring-slate-700 focus:ring-2 focus:ring-primary outline-none transition-all placeholder:text-slate-400"
+                            placeholder="Contoh: Budi Santoso" type="text" />
+                    </div>
+                </div>
+                <!-- Phone/WhatsApp Field -->
+                <div class="space-y-1.5">
+                    <label
+                        class="text-xs font-semibold text-slate-500 dark:text-slate-400 ml-4 uppercase tracking-wider">Nomor
+                        HP/WhatsApp</label>
+                    <div class="relative group">
+                        <span
+                            class="material-icons-round absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors text-[20px]">phone_iphone</span>
+                        <input
+                            class="w-full pl-12 pr-4 py-4 bg-slate-50 dark:bg-slate-800 border-none rounded-full ring-1 ring-slate-200 dark:ring-slate-700 focus:ring-2 focus:ring-primary outline-none transition-all placeholder:text-slate-400"
+                            placeholder="0812 3456 7890" type="tel" />
+                    </div>
+                </div>
+                <!-- Password Field -->
+                <div class="space-y-1.5">
+                    <label
+                        class="text-xs font-semibold text-slate-500 dark:text-slate-400 ml-4 uppercase tracking-wider">Kata
+                        Sandi</label>
+                    <div class="relative group">
+                        <span
+                            class="material-icons-round absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors text-[20px]">lock</span>
+                        <input
+                            class="w-full pl-12 pr-12 py-4 bg-slate-50 dark:bg-slate-800 border-none rounded-full ring-1 ring-slate-200 dark:ring-slate-700 focus:ring-2 focus:ring-primary outline-none transition-all placeholder:text-slate-400"
+                            placeholder="••••••••" type="password" />
+                        <button class="absolute right-4 top-1/2 -translate-y-1/2 text-slate-400" type="button">
+                            <span class="material-icons-round text-[20px]">visibility_off</span>
+                        </button>
+                    </div>
+                </div>
+                <!-- Confirm Password Field -->
+                <div class="space-y-1.5">
+                    <label
+                        class="text-xs font-semibold text-slate-500 dark:text-slate-400 ml-4 uppercase tracking-wider">Konfirmasi
+                        Kata Sandi</label>
+                    <div class="relative group">
+                        <span
+                            class="material-icons-round absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors text-[20px]">verified_user</span>
+                        <input
+                            class="w-full pl-12 pr-12 py-4 bg-slate-50 dark:bg-slate-800 border-none rounded-full ring-1 ring-slate-200 dark:ring-slate-700 focus:ring-2 focus:ring-primary outline-none transition-all placeholder:text-slate-400"
+                            placeholder="••••••••" type="password" />
+                    </div>
+                </div>
+                <!-- Role Info -->
+                <div class="flex items-center gap-2 px-4 py-3 bg-primary/5 dark:bg-primary/10 rounded-lg">
+                    <span class="material-icons-round text-primary text-[18px]">info</span>
+                    <p class="text-[11px] text-slate-600 dark:text-slate-400 leading-tight">
+                        Registrasi ini berlaku untuk akses sebagai Host (Penyelenggara) maupun Peserta.
+                    </p>
+                </div>
+                <!-- Primary Submit Button -->
+                <button
+                    class="w-full bg-primary hover:bg-primary/90 text-slate-900 font-bold py-4 rounded-full shadow-lg shadow-primary/30 transition-all active:scale-[0.98] flex items-center justify-center gap-2 mt-4"
+                    type="submit">
+                    <span>Daftar Sekarang</span>
+                    <span class="material-icons-round">arrow_forward</span>
+                </button>
+            </form>
+            <!-- Footer Navigation -->
+            <footer class="mt-10 pb-4 text-center">
+                <p class="text-sm text-slate-500 dark:text-slate-400 mb-6">
+                    Sudah punya akun?
+                    <a class="text-primary font-bold hover:underline decoration-2 underline-offset-4" href="#">Masuk</a>
+                </p>
+                <div class="flex flex-col gap-2 opacity-50">
+                    <p class="text-[10px] text-slate-400 uppercase tracking-widest font-medium">Buka Bersama App v1.0
+                    </p>
+                    <div class="flex justify-center gap-4">
+                        <a class="text-[10px] hover:text-primary" href="#">Syarat &amp; Ketentuan</a>
+                        <a class="text-[10px] hover:text-primary" href="#">Kebijakan Privasi</a>
+                    </div>
+                </div>
+            </footer>
+        </div>
+        <!-- App Logo Icon Bottom Right -->
+        <div class="absolute -bottom-8 -right-8 w-32 h-32 bg-primary/5 rounded-full -z-10"></div>
+    </main>
+    <!-- iOS Home Indicator (Visual only) -->
+    <div class="mt-8 w-32 h-1.5 bg-slate-300 dark:bg-slate-700 rounded-full"></div>
+    <!-- Background Decoration Image -->
+    <div class="fixed top-0 left-0 w-full h-full opacity-5 pointer-events-none -z-20 overflow-hidden">
+        <div class="absolute top-10 left-10 w-64 h-64 bg-primary rounded-full blur-[100px]"></div>
+        <div class="absolute bottom-10 right-10 w-64 h-64 bg-primary rounded-full blur-[100px]"></div>
+    </div>
+</body>
+
+</html>
+
+<!-- Host Dashboard -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Riwayat Pemesanan - Buka Puasa App</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f48c25",
+                        "primary-dark": "#d6761b",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#221910",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2d241b",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px", "2xl": "1.5rem", "3xl": "2rem" },
+                    boxShadow: {
+                        'soft': '0 10px 40px -10px rgba(244, 140, 37, 0.1)',
+                        'card': '0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02)',
+                    }
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-100 min-h-screen flex flex-col items-center">
+    <div
+        class="w-full max-w-md min-h-screen bg-background-light dark:bg-background-dark relative shadow-2xl flex flex-col">
+        <div class="h-12 w-full flex justify-between items-center px-6 pt-2 shrink-0">
+            <span class="text-sm font-semibold">9:41</span>
+            <div class="flex gap-1.5">
+                <div class="w-4 h-4 rounded-full bg-gray-900 dark:bg-white opacity-20"></div>
+                <div class="w-4 h-4 rounded-full bg-gray-900 dark:bg-white opacity-20"></div>
+                <div class="w-6 h-3 rounded-full border border-gray-900 dark:border-white opacity-40"></div>
+            </div>
+        </div>
+        <header class="px-6 pt-4 pb-2 flex items-center justify-between">
+            <h1 class="text-2xl font-bold text-gray-900 dark:text-white">Riwayat Pemesanan</h1>
+            <button
+                class="w-10 h-10 flex items-center justify-center rounded-full bg-white dark:bg-surface-dark shadow-sm">
+                <span class="material-icons-round text-gray-500">search</span>
+            </button>
+        </header>
+        <div class="px-6 py-4">
+            <div class="flex gap-2 overflow-x-auto no-scrollbar">
+                <button class="px-5 py-2.5 rounded-full bg-primary text-white text-sm font-bold whitespace-nowrap">
+                    Semua
+                </button>
+                <button
+                    class="px-5 py-2.5 rounded-full bg-white dark:bg-surface-dark text-gray-500 dark:text-gray-400 text-sm font-semibold whitespace-nowrap border border-gray-100 dark:border-gray-800">
+                    Selesai
+                </button>
+                <button
+                    class="px-5 py-2.5 rounded-full bg-white dark:bg-surface-dark text-gray-500 dark:text-gray-400 text-sm font-semibold whitespace-nowrap border border-gray-100 dark:border-gray-800">
+                    Dibatalkan
+                </button>
+            </div>
+        </div>
+        <main class="flex-1 px-6 space-y-4 pb-32 overflow-y-auto no-scrollbar">
+            <div
+                class="bg-white dark:bg-surface-dark rounded-3xl p-5 shadow-card border border-gray-100 dark:border-gray-800 opacity-90">
+                <div class="flex justify-between items-start mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span
+                                class="px-2.5 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 text-[10px] font-bold uppercase tracking-wider">Closed</span>
+                            <span class="text-[10px] text-gray-400 font-medium">15 Apr 2023</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-800 dark:text-gray-200">Reuni SMA 1 Jakarta</h4>
+                        <div class="flex items-center text-gray-500 dark:text-gray-400 text-sm mt-1">
+                            <span class="material-icons-round text-base mr-1 opacity-70">restaurant</span>
+                            Warung Tekko
+                        </div>
+                    </div>
+                    <div
+                        class="bg-green-50 dark:bg-green-900/10 text-green-600 dark:text-green-400 px-3 py-1.5 rounded-xl text-[10px] font-bold uppercase">
+                        Selesai
+                    </div>
+                </div>
+                <div class="flex justify-between items-center pt-3 border-t border-gray-50 dark:border-gray-800">
+                    <div class="flex items-center text-gray-400 text-xs font-medium">
+                        <span class="material-icons-round text-sm mr-1">groups</span>
+                        18 Peserta
+                    </div>
+                    <button class="text-primary text-sm font-bold flex items-center">
+                        Detail
+                        <span class="material-icons-round text-lg ml-0.5">chevron_right</span>
+                    </button>
+                </div>
+            </div>
+            <div
+                class="bg-white dark:bg-surface-dark rounded-3xl p-5 shadow-card border border-gray-100 dark:border-gray-800 opacity-90">
+                <div class="flex justify-between items-start mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span
+                                class="px-2.5 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 text-[10px] font-bold uppercase tracking-wider">Closed</span>
+                            <span class="text-[10px] text-gray-400 font-medium">12 Apr 2023</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-800 dark:text-gray-200">Bukber Divisi IT</h4>
+                        <div class="flex items-center text-gray-500 dark:text-gray-400 text-sm mt-1">
+                            <span class="material-icons-round text-base mr-1 opacity-70">restaurant</span>
+                            Bakmi GM
+                        </div>
+                    </div>
+                    <div
+                        class="bg-green-50 dark:bg-green-900/10 text-green-600 dark:text-green-400 px-3 py-1.5 rounded-xl text-[10px] font-bold uppercase">
+                        Selesai
+                    </div>
+                </div>
+                <div class="flex justify-between items-center pt-3 border-t border-gray-50 dark:border-gray-800">
+                    <div class="flex items-center text-gray-400 text-xs font-medium">
+                        <span class="material-icons-round text-sm mr-1">groups</span>
+                        8 Peserta
+                    </div>
+                    <button class="text-primary text-sm font-bold flex items-center">
+                        Detail
+                        <span class="material-icons-round text-lg ml-0.5">chevron_right</span>
+                    </button>
+                </div>
+            </div>
+            <div
+                class="bg-white dark:bg-surface-dark rounded-3xl p-5 shadow-card border border-gray-100 dark:border-gray-800 opacity-90">
+                <div class="flex justify-between items-start mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span
+                                class="px-2.5 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 text-[10px] font-bold uppercase tracking-wider">Closed</span>
+                            <span class="text-[10px] text-gray-400 font-medium">10 Apr 2023</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-800 dark:text-gray-200">Arisan Keluarga</h4>
+                        <div class="flex items-center text-gray-500 dark:text-gray-400 text-sm mt-1">
+                            <span class="material-icons-round text-base mr-1 opacity-70">restaurant</span>
+                            Bebek Bengil
+                        </div>
+                    </div>
+                    <div
+                        class="bg-red-50 dark:bg-red-900/10 text-red-600 dark:text-red-400 px-3 py-1.5 rounded-xl text-[10px] font-bold uppercase">
+                        Dibatalkan
+                    </div>
+                </div>
+                <div class="flex justify-between items-center pt-3 border-t border-gray-50 dark:border-gray-800">
+                    <div class="flex items-center text-gray-400 text-xs font-medium">
+                        <span class="material-icons-round text-sm mr-1">groups</span>
+                        5 Peserta
+                    </div>
+                    <button class="text-primary text-sm font-bold flex items-center">
+                        Detail
+                        <span class="material-icons-round text-lg ml-0.5">chevron_right</span>
+                    </button>
+                </div>
+            </div>
+            <div
+                class="bg-white dark:bg-surface-dark rounded-3xl p-5 shadow-card border border-gray-100 dark:border-gray-800 opacity-90">
+                <div class="flex justify-between items-start mb-3">
+                    <div class="flex-1">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span
+                                class="px-2.5 py-1 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-500 dark:text-gray-400 text-[10px] font-bold uppercase tracking-wider">Closed</span>
+                            <span class="text-[10px] text-gray-400 font-medium">05 Apr 2023</span>
+                        </div>
+                        <h4 class="text-lg font-bold text-gray-800 dark:text-gray-200">Gathering Freelance</h4>
+                        <div class="flex items-center text-gray-500 dark:text-gray-400 text-sm mt-1">
+                            <span class="material-icons-round text-base mr-1 opacity-70">restaurant</span>
+                            Social Garden
+                        </div>
+                    </div>
+                    <div
+                        class="bg-green-50 dark:bg-green-900/10 text-green-600 dark:text-green-400 px-3 py-1.5 rounded-xl text-[10px] font-bold uppercase">
+                        Selesai
+                    </div>
+                </div>
+                <div class="flex justify-between items-center pt-3 border-t border-gray-50 dark:border-gray-800">
+                    <div class="flex items-center text-gray-400 text-xs font-medium">
+                        <span class="material-icons-round text-sm mr-1">groups</span>
+                        12 Peserta
+                    </div>
+                    <button class="text-primary text-sm font-bold flex items-center">
+                        Detail
+                        <span class="material-icons-round text-lg ml-0.5">chevron_right</span>
+                    </button>
+                </div>
+            </div>
+        </main>
+        <nav
+            class="fixed bottom-0 w-full max-w-md bg-white/90 dark:bg-surface-dark/90 backdrop-blur-lg border-t border-gray-100 dark:border-gray-800 px-6 py-4 flex justify-between items-center z-20">
+            <button class="flex flex-col items-center text-gray-400 hover:text-primary gap-1 transition-colors">
+                <span class="material-icons-round text-2xl">grid_view</span>
+                <span class="text-[10px] font-medium">Dashboard</span>
+            </button>
+            <button class="flex flex-col items-center text-primary gap-1">
+                <span class="material-icons-round text-2xl">history</span>
+                <span class="text-[10px] font-bold">History</span>
+            </button>
+            <button class="flex flex-col items-center text-gray-400 hover:text-primary gap-1 transition-colors">
+                <span class="material-icons-round text-2xl">person</span>
+                <span class="text-[10px] font-medium">Profile</span>
+            </button>
+        </nav>
+        <div class="fixed bottom-1 w-full max-w-md flex justify-center z-30 pointer-events-none">
+            <div class="w-32 h-1 bg-gray-300 dark:bg-gray-600 rounded-full"></div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<!-- Host Dashboard -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Profil Pengguna - Buka Puasa App</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#10b981", // Changed to Green accent as requested
+                        "primary-dark": "#059669",
+                        "background-light": "#f9fafb",
+                        "background-dark": "#111827",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1f2937",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px", "2xl": "1.5rem", "3xl": "2rem" },
+                    boxShadow: {
+                        'soft': '0 10px 40px -10px rgba(16, 185, 129, 0.1)',
+                        'card': '0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02)',
+                    }
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-100 min-h-screen flex flex-col items-center">
+    <div
+        class="w-full max-w-md h-screen bg-background-light dark:bg-background-dark relative shadow-2xl overflow-hidden flex flex-col">
+        <div class="h-12 w-full flex justify-between items-center px-8 pt-2 shrink-0">
+            <span class="text-sm font-semibold">9:41</span>
+            <div class="flex gap-1.5 items-center">
+                <span class="material-symbols-outlined text-[16px]">signal_cellular_4_bar</span>
+                <span class="material-symbols-outlined text-[16px]">wifi</span>
+                <span class="material-symbols-outlined text-[20px]">battery_full</span>
+            </div>
+        </div>
+        <div class="px-6 py-4 flex items-center justify-between">
+            <button
+                class="w-10 h-10 flex items-center justify-center rounded-full bg-white dark:bg-surface-dark shadow-sm">
+                <span class="material-icons-round text-gray-600 dark:text-gray-300">chevron_left</span>
+            </button>
+            <h1 class="text-lg font-bold text-gray-900 dark:text-white">Profil Pengguna</h1>
+            <div class="w-10"></div>
+        </div>
+        <div class="flex-1 overflow-y-auto no-scrollbar pb-32">
+            <div class="flex flex-col items-center px-6 pt-6 pb-8">
+                <div class="relative mb-4">
+                    <div
+                        class="w-28 h-28 rounded-full overflow-hidden border-4 border-white dark:border-surface-dark shadow-xl">
+                        <img alt="Profile Picture" class="w-full h-full object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBg0o-uTpbU8d17uJ1iG0ZU-K9MRCPpp5jNm_oinfxGtJK_kngLC-3ZQLmj_pJcjF054xkQJb1cCnonz1zJpui04-yCWZxNVv_IvojlZKaPE8m7fTU5UZTLVSrXvv9kYqBJJoR1JyktxbuQl9rggPRPrx2TMP6N9Xml5LvJAGUj_AEMXQVIGQuSdpDgQUdw3q4rvTsC4x_77ulDQWGezwz5HxyBA8yhjODVz9xxAtec0MYttOoFtdac76DwZwFAGhllK7oSW8ByaP6Z" />
+                    </div>
+                    <div
+                        class="absolute bottom-1 right-1 bg-primary text-white p-2 rounded-full border-2 border-white dark:border-surface-dark shadow-lg">
+                        <span class="material-icons-round text-sm">photo_camera</span>
+                    </div>
+                </div>
+                <h2 class="text-xl font-bold text-gray-900 dark:text-white">Rizky Ramadhan</h2>
+                <p class="text-gray-500 dark:text-gray-400 font-medium">+62 812-3456-7890</p>
+            </div>
+            <div class="px-6 space-y-3">
+                <button
+                    class="w-full flex items-center justify-between p-4 bg-white dark:bg-surface-dark rounded-2xl shadow-card active:scale-[0.98] transition-transform">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+                            <span class="material-icons-round">person_outline</span>
+                        </div>
+                        <span class="font-semibold text-gray-700 dark:text-gray-200">Edit Profil</span>
+                    </div>
+                    <span class="material-icons-round text-gray-400">chevron_right</span>
+                </button>
+                <button
+                    class="w-full flex items-center justify-between p-4 bg-white dark:bg-surface-dark rounded-2xl shadow-card active:scale-[0.98] transition-transform">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+                            <span class="material-icons-round">shield</span>
+                        </div>
+                        <span class="font-semibold text-gray-700 dark:text-gray-200">Keamanan Akun</span>
+                    </div>
+                    <span class="material-icons-round text-gray-400">chevron_right</span>
+                </button>
+                <button
+                    class="w-full flex items-center justify-between p-4 bg-white dark:bg-surface-dark rounded-2xl shadow-card active:scale-[0.98] transition-transform">
+                    <div class="flex items-center gap-4">
+                        <div class="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center text-primary">
+                            <span class="material-icons-round">help_outline</span>
+                        </div>
+                        <span class="font-semibold text-gray-700 dark:text-gray-200">Bantuan</span>
+                    </div>
+                    <span class="material-icons-round text-gray-400">chevron_right</span>
+                </button>
+                <div class="pt-4">
+                    <button
+                        class="w-full flex items-center justify-between p-4 bg-red-50 dark:bg-red-900/10 rounded-2xl active:scale-[0.98] transition-transform border border-red-100 dark:border-red-900/20">
+                        <div class="flex items-center gap-4">
+                            <div
+                                class="w-10 h-10 rounded-xl bg-red-100 dark:bg-red-900/30 flex items-center justify-center text-red-500">
+                                <span class="material-icons-round">logout</span>
+                            </div>
+                            <span class="font-semibold text-red-600 dark:text-red-400">Keluar</span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+            <div class="mt-12 text-center pb-10">
+                <p class="text-xs text-gray-400 dark:text-gray-500 font-medium">Versi 1.2.0 (Build 2024)</p>
+            </div>
+        </div>
+        <nav
+            class="absolute bottom-0 w-full bg-white/95 dark:bg-surface-dark/95 backdrop-blur-md border-t border-gray-100 dark:border-gray-800 px-6 py-4 flex justify-between items-center z-20">
+            <button class="flex flex-col items-center text-gray-400 hover:text-primary transition-colors gap-1">
+                <span class="material-icons-round text-2xl">grid_view</span>
+                <span class="text-[10px] font-medium">Dashboard</span>
+            </button>
+            <button class="flex flex-col items-center text-gray-400 hover:text-primary transition-colors gap-1">
+                <span class="material-icons-round text-2xl">history</span>
+                <span class="text-[10px] font-medium">History</span>
+            </button>
+            <button class="flex flex-col items-center text-primary gap-1">
+                <span class="material-icons-round text-2xl">person</span>
+                <span class="text-[10px] font-bold">Profile</span>
+            </button>
+        </nav>
+        <div class="absolute bottom-1 left-0 right-0 flex justify-center z-30 pointer-events-none">
+            <div class="w-32 h-1 bg-gray-300 dark:bg-gray-700 rounded-full"></div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<!-- Host Dashboard -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Edit Profil - Buka Puasa App</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#10b981",
+                        "primary-dark": "#059669",
+                        "background-light": "#f9fafb",
+                        "background-dark": "#111827",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1f2937",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px", "2xl": "1.5rem", "3xl": "2rem" },
+                    boxShadow: {
+                        'soft': '0 10px 40px -10px rgba(16, 185, 129, 0.1)',
+                        'card': '0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02)',
+                    }
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-100 min-h-screen flex flex-col items-center">
+    <div
+        class="w-full max-w-md h-screen bg-background-light dark:bg-background-dark relative shadow-2xl overflow-hidden flex flex-col">
+        <div class="h-12 w-full flex justify-between items-center px-8 pt-2 shrink-0">
+            <span class="text-sm font-semibold">9:41</span>
+            <div class="flex gap-1.5 items-center">
+                <span class="material-symbols-outlined text-[16px]">signal_cellular_4_bar</span>
+                <span class="material-symbols-outlined text-[16px]">wifi</span>
+                <span class="material-symbols-outlined text-[20px]">battery_full</span>
+            </div>
+        </div>
+        <div class="px-6 py-4 flex items-center justify-between">
+            <button
+                class="w-10 h-10 flex items-center justify-center rounded-full bg-white dark:bg-surface-dark shadow-sm active:scale-95 transition-transform">
+                <span class="material-icons-round text-gray-600 dark:text-gray-300">chevron_left</span>
+            </button>
+            <h1 class="text-lg font-bold text-gray-900 dark:text-white">Edit Profil</h1>
+            <div class="w-10"></div>
+        </div>
+        <div class="flex-1 overflow-y-auto no-scrollbar pb-32">
+            <div class="flex flex-col items-center px-6 pt-6 pb-8">
+                <div class="relative group">
+                    <div
+                        class="w-28 h-28 rounded-full overflow-hidden border-4 border-white dark:border-surface-dark shadow-xl">
+                        <img alt="Profile Picture" class="w-full h-full object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBg0o-uTpbU8d17uJ1iG0ZU-K9MRCPpp5jNm_oinfxGtJK_kngLC-3ZQLmj_pJcjF054xkQJb1cCnonz1zJpui04-yCWZxNVv_IvojlZKaPE8m7fTU5UZTLVSrXvv9kYqBJJoR1JyktxbuQl9rggPRPrx2TMP6N9Xml5LvJAGUj_AEMXQVIGQuSdpDgQUdw3q4rvTsC4x_77ulDQWGezwz5HxyBA8yhjODVz9xxAtec0MYttOoFtdac76DwZwFAGhllK7oSW8ByaP6Z" />
+                    </div>
+                    <button
+                        class="absolute bottom-1 right-1 bg-primary text-white p-2.5 rounded-full border-4 border-background-light dark:border-background-dark shadow-lg active:scale-90 transition-transform">
+                        <span class="material-icons-round text-sm">photo_camera</span>
+                    </button>
+                </div>
+                <p class="mt-4 text-sm font-medium text-primary">Ubah Foto Profil</p>
+            </div>
+            <div class="px-6 space-y-6">
+                <div class="space-y-2">
+                    <label class="text-sm font-bold text-gray-700 dark:text-gray-300 ml-1">Nama Lengkap</label>
+                    <div class="relative group">
+                        <div
+                            class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-400 group-focus-within:text-primary transition-colors">
+                            <span class="material-icons-round text-xl">person</span>
+                        </div>
+                        <input
+                            class="w-full pl-12 pr-4 py-4 bg-white dark:bg-surface-dark border-0 rounded-2xl shadow-card focus:ring-2 focus:ring-primary text-gray-900 dark:text-white font-medium"
+                            placeholder="Masukkan nama lengkap" type="text" value="Rizky Ramadhan" />
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <label class="text-sm font-bold text-gray-700 dark:text-gray-300 ml-1">Nomor WhatsApp</label>
+                    <div class="relative group">
+                        <div
+                            class="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-400 group-focus-within:text-primary transition-colors">
+                            <span class="material-icons-round text-xl">phone</span>
+                        </div>
+                        <input
+                            class="w-full pl-12 pr-4 py-4 bg-white dark:bg-surface-dark border-0 rounded-2xl shadow-card focus:ring-2 focus:ring-primary text-gray-900 dark:text-white font-medium"
+                            placeholder="Masukkan nomor WhatsApp" type="tel" value="+62 812-3456-7890" />
+                    </div>
+                    <p class="text-[10px] text-gray-400 ml-1">Gunakan format internasional (Contoh: +62...)</p>
+                </div>
+            </div>
+        </div>
+        <div
+            class="absolute bottom-0 w-full bg-white/80 dark:bg-background-dark/80 backdrop-blur-lg px-6 pt-4 pb-10 z-20">
+            <button
+                class="w-full bg-primary hover:bg-primary-dark text-white font-bold py-4 rounded-2xl shadow-soft shadow-primary/20 active:scale-[0.98] transition-all flex items-center justify-center gap-2">
+                <span>Simpan Perubahan</span>
+            </button>
+        </div>
+        <div class="absolute bottom-1 left-0 right-0 flex justify-center z-30 pointer-events-none">
+            <div class="w-32 h-1.5 bg-gray-200 dark:bg-gray-800 rounded-full"></div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<!-- Host Dashboard -->
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Keamanan Akun - Buka Puasa App</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#10b981",
+                        "primary-dark": "#059669",
+                        "background-light": "#f9fafb",
+                        "background-dark": "#111827",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1f2937",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px", "2xl": "1.5rem", "3xl": "2rem" },
+                    boxShadow: {
+                        'soft': '0 10px 40px -10px rgba(16, 185, 129, 0.1)',
+                        'card': '0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02)',
+                    }
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-100 min-h-screen flex flex-col items-center">
+    <div
+        class="w-full max-w-md h-screen bg-background-light dark:bg-background-dark relative shadow-2xl overflow-hidden flex flex-col">
+        <div class="h-12 w-full flex justify-between items-center px-8 pt-2 shrink-0">
+            <span class="text-sm font-semibold">9:41</span>
+            <div class="flex gap-1.5 items-center">
+                <span class="material-symbols-outlined text-[16px]">signal_cellular_4_bar</span>
+                <span class="material-symbols-outlined text-[16px]">wifi</span>
+                <span class="material-symbols-outlined text-[20px]">battery_full</span>
+            </div>
+        </div>
+        <div class="px-6 py-4 flex items-center justify-between">
+            <button
+                class="w-10 h-10 flex items-center justify-center rounded-full bg-white dark:bg-surface-dark shadow-sm">
+                <span class="material-icons-round text-gray-600 dark:text-gray-300">chevron_left</span>
+            </button>
+            <h1 class="text-lg font-bold text-gray-900 dark:text-white">Keamanan Akun</h1>
+            <div class="w-10"></div>
+        </div>
+        <div class="flex-1 overflow-y-auto no-scrollbar px-6 pb-32">
+            <div class="mt-8 mb-10 text-center">
+                <div class="w-20 h-20 bg-primary/10 rounded-3xl flex items-center justify-center mx-auto mb-4">
+                    <span class="material-icons-round text-4xl text-primary">lock</span>
+                </div>
+                <h2 class="text-xl font-bold text-gray-900 dark:text-white">Ubah Kata Sandi</h2>
+                <p class="text-gray-500 dark:text-gray-400 text-sm mt-2 px-8">Pastikan kata sandi Anda kuat dan tidak
+                    mudah ditebak untuk keamanan akun.</p>
+            </div>
+            <form class="space-y-5">
+                <div class="space-y-2">
+                    <label class="text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1">Kata Sandi Saat
+                        Ini</label>
+                    <div class="relative">
+                        <input
+                            class="w-full h-14 bg-white dark:bg-surface-dark border-none rounded-2xl px-5 text-gray-900 dark:text-white placeholder:text-gray-400 focus:ring-2 focus:ring-primary shadow-card transition-all"
+                            placeholder="••••••••" type="password" value="password123" />
+                        <button class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400" type="button">
+                            <span class="material-icons-round">visibility</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <label class="text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1">Kata Sandi Baru</label>
+                    <div class="relative">
+                        <input
+                            class="w-full h-14 bg-white dark:bg-surface-dark border-none rounded-2xl px-5 text-gray-900 dark:text-white placeholder:text-gray-400 focus:ring-2 focus:ring-primary shadow-card transition-all"
+                            placeholder="••••••••" type="password" />
+                        <button class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400" type="button">
+                            <span class="material-icons-round">visibility_off</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="space-y-2">
+                    <label class="text-sm font-semibold text-gray-700 dark:text-gray-300 ml-1">Konfirmasi Kata Sandi
+                        Baru</label>
+                    <div class="relative">
+                        <input
+                            class="w-full h-14 bg-white dark:bg-surface-dark border-none rounded-2xl px-5 text-gray-900 dark:text-white placeholder:text-gray-400 focus:ring-2 focus:ring-primary shadow-card transition-all"
+                            placeholder="••••••••" type="password" />
+                        <button class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400" type="button">
+                            <span class="material-icons-round">visibility_off</span>
+                        </button>
+                    </div>
+                </div>
+                <div class="pt-6">
+                    <button
+                        class="w-full h-14 bg-primary hover:bg-primary-dark text-white font-bold rounded-2xl shadow-soft transition-all active:scale-[0.98] flex items-center justify-center gap-2"
+                        type="submit">
+                        <span class="material-icons-round text-xl">verified_user</span>
+                        Perbarui Kata Sandi
+                    </button>
+                </div>
+            </form>
+            <div class="mt-8 p-4 bg-primary/5 rounded-2xl border border-primary/10">
+                <div class="flex gap-3">
+                    <span class="material-icons-round text-primary shrink-0">info</span>
+                    <p class="text-xs text-gray-600 dark:text-gray-400 leading-relaxed">
+                        Tips: Kata sandi yang kuat setidaknya terdiri dari 8 karakter, mencakup huruf besar, angka, dan
+                        simbol.
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="absolute bottom-1 left-0 right-0 flex justify-center z-30 pointer-events-none pb-1">
+            <div class="w-32 h-1 bg-gray-300 dark:bg-gray-700 rounded-full"></div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<!-- Host Dashboard -->
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Pusat Bantuan - Buka Puasa App</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#10b981",
+                        "primary-dark": "#059669",
+                        "background-light": "#f9fafb",
+                        "background-dark": "#111827",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1f2937",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px", "2xl": "1.5rem", "3xl": "2rem" },
+                    boxShadow: {
+                        'soft': '0 10px 40px -10px rgba(16, 185, 129, 0.1)',
+                        'card': '0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02)',
+                    }
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+
+        details>summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-100 min-h-screen flex flex-col items-center">
+    <div
+        class="w-full max-w-md h-screen bg-background-light dark:bg-background-dark relative shadow-2xl overflow-hidden flex flex-col">
+        <div class="h-12 w-full flex justify-between items-center px-8 pt-2 shrink-0">
+            <span class="text-sm font-semibold">9:41</span>
+            <div class="flex gap-1.5 items-center">
+                <span class="material-symbols-outlined text-[16px]">signal_cellular_4_bar</span>
+                <span class="material-symbols-outlined text-[16px]">wifi</span>
+                <span class="material-symbols-outlined text-[20px]">battery_full</span>
+            </div>
+        </div>
+        <div class="px-6 py-4 flex items-center justify-between shrink-0">
+            <button
+                class="w-10 h-10 flex items-center justify-center rounded-full bg-white dark:bg-surface-dark shadow-sm">
+                <span class="material-icons-round text-gray-600 dark:text-gray-300">chevron_left</span>
+            </button>
+            <h1 class="text-lg font-bold text-gray-900 dark:text-white">Pusat Bantuan</h1>
+            <div class="w-10"></div>
+        </div>
+        <div class="flex-1 overflow-y-auto no-scrollbar px-6 pb-40">
+            <div class="flex flex-col items-center py-8">
+                <div class="w-20 h-20 bg-primary/10 rounded-3xl flex items-center justify-center mb-4">
+                    <span class="material-symbols-outlined text-primary text-5xl">support_agent</span>
+                </div>
+                <h2 class="text-xl font-bold text-gray-900 dark:text-white">Ada yang bisa dibantu?</h2>
+                <p class="text-gray-500 dark:text-gray-400 text-center text-sm mt-2">Cari solusi cepat di FAQ atau
+                    hubungi admin kami.</p>
+            </div>
+            <div class="space-y-4">
+                <h3 class="text-sm font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider ml-1">FAQ
+                    Terpopuler</h3>
+                <details class="group bg-white dark:bg-surface-dark rounded-2xl shadow-card">
+                    <summary class="flex items-center justify-between p-5 cursor-pointer list-none">
+                        <span class="font-semibold text-gray-700 dark:text-gray-200 pr-4">Bagaimana cara membuat
+                            room?</span>
+                        <span
+                            class="material-icons-round text-gray-400 group-open:rotate-180 transition-transform">expand_more</span>
+                    </summary>
+                    <div
+                        class="px-5 pb-5 text-sm text-gray-500 dark:text-gray-400 leading-relaxed border-t border-gray-50 dark:border-gray-800 pt-4">
+                        Buka Dashboard, klik tombol "Buat Room Baru" di bagian atas. Tentukan nama room dan bagikan link
+                        atau kode room ke teman-temanmu.
+                    </div>
+                </details>
+                <details class="group bg-white dark:bg-surface-dark rounded-2xl shadow-card">
+                    <summary class="flex items-center justify-between p-5 cursor-pointer list-none">
+                        <span class="font-semibold text-gray-700 dark:text-gray-200 pr-4">Bagaimana cara pesan?</span>
+                        <span
+                            class="material-icons-round text-gray-400 group-open:rotate-180 transition-transform">expand_more</span>
+                    </summary>
+                    <div
+                        class="px-5 pb-5 text-sm text-gray-500 dark:text-gray-400 leading-relaxed border-t border-gray-50 dark:border-gray-800 pt-4">
+                        Setelah masuk ke room, pilih menu yang tersedia dari daftar restoran. Klik ikon "+" untuk
+                        menambah pesanan ke keranjangmu, lalu konfirmasi pesanan.
+                    </div>
+                </details>
+                <details class="group bg-white dark:bg-surface-dark rounded-2xl shadow-card">
+                    <summary class="flex items-center justify-between p-5 cursor-pointer list-none">
+                        <span class="font-semibold text-gray-700 dark:text-gray-200 pr-4">Lupa password?</span>
+                        <span
+                            class="material-icons-round text-gray-400 group-open:rotate-180 transition-transform">expand_more</span>
+                    </summary>
+                    <div
+                        class="px-5 pb-5 text-sm text-gray-500 dark:text-gray-400 leading-relaxed border-t border-gray-50 dark:border-gray-800 pt-4">
+                        Klik "Lupa Password" pada halaman login. Masukkan nomor HP terdaftar, kami akan mengirimkan kode
+                        OTP untuk mengatur ulang kata sandi Anda.
+                    </div>
+                </details>
+                <details class="group bg-white dark:bg-surface-dark rounded-2xl shadow-card">
+                    <summary class="flex items-center justify-between p-5 cursor-pointer list-none">
+                        <span class="font-semibold text-gray-700 dark:text-gray-200 pr-4">Cara membatalkan
+                            pesanan?</span>
+                        <span
+                            class="material-icons-round text-gray-400 group-open:rotate-180 transition-transform">expand_more</span>
+                    </summary>
+                    <div
+                        class="px-5 pb-5 text-sm text-gray-500 dark:text-gray-400 leading-relaxed border-t border-gray-50 dark:border-gray-800 pt-4">
+                        Pembatalan hanya bisa dilakukan sebelum admin room melakukan checkout ke restoran. Hubungi
+                        pembuat room untuk membatalkan pesanan Anda.
+                    </div>
+                </details>
+            </div>
+        </div>
+        <div
+            class="absolute bottom-0 w-full bg-gradient-to-t from-background-light dark:from-background-dark via-background-light/95 dark:via-background-dark/95 to-transparent px-6 pb-12 pt-8 z-20">
+            <button
+                class="w-full bg-[#25D366] hover:bg-[#128C7E] text-white py-4 rounded-2xl flex items-center justify-center gap-3 shadow-lg shadow-[#25D366]/20 transition-all active:scale-[0.98]">
+                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.438 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z">
+                    </path>
+                </svg>
+                <span class="font-bold">Hubungi Admin via WhatsApp</span>
+            </button>
+        </div>
+        <div class="absolute bottom-1 left-0 right-0 flex justify-center z-30 pointer-events-none">
+            <div class="w-32 h-1 bg-gray-300 dark:bg-gray-700 rounded-full"></div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<!-- Host Dashboard -->
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Penjelasan Pusat Bantuan - Buka Puasa App</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#10b981",
+                        "primary-dark": "#059669",
+                        "background-light": "#f9fafb",
+                        "background-dark": "#111827",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1f2937",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px", "2xl": "1.5rem", "3xl": "2rem" },
+                    boxShadow: {
+                        'soft': '0 10px 40px -10px rgba(16, 185, 129, 0.1)',
+                        'card': '0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02)',
+                    }
+                },
+            },
+        }
+    </script>
+    <style type="text/tailwindcss">
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+
+        details>summary::-webkit-details-marker {
+            display: none;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-100 min-h-screen flex flex-col items-center">
+    <div
+        class="w-full max-w-md h-screen bg-background-light dark:bg-background-dark relative shadow-2xl overflow-hidden flex flex-col">
+        <div class="h-12 w-full flex justify-between items-center px-8 pt-2 shrink-0">
+            <span class="text-sm font-semibold">9:41</span>
+            <div class="flex gap-1.5 items-center">
+                <span class="material-symbols-outlined text-[16px]">signal_cellular_4_bar</span>
+                <span class="material-symbols-outlined text-[16px]">wifi</span>
+                <span class="material-symbols-outlined text-[20px]">battery_full</span>
+            </div>
+        </div>
+        <div class="px-6 py-4 flex items-center justify-between shrink-0">
+            <button
+                class="w-10 h-10 flex items-center justify-center rounded-full bg-white dark:bg-surface-dark shadow-sm">
+                <span class="material-icons-round text-gray-600 dark:text-gray-300">chevron_left</span>
+            </button>
+            <h1 class="text-lg font-bold text-gray-900 dark:text-white">Pusat Bantuan</h1>
+            <div class="w-10"></div>
+        </div>
+        <div class="flex-1 overflow-y-auto no-scrollbar px-6 pb-44">
+            <div class="flex flex-col items-center py-8">
+                <div class="w-20 h-20 bg-primary/10 rounded-3xl flex items-center justify-center mb-4">
+                    <span class="material-symbols-outlined text-primary text-5xl">support_agent</span>
+                </div>
+                <h2 class="text-xl font-bold text-gray-900 dark:text-white text-center">Penjelasan Pusat Bantuan</h2>
+                <p class="text-gray-500 dark:text-gray-400 text-center text-sm mt-2">Cari solusi cepat di FAQ atau
+                    hubungi admin kami.</p>
+            </div>
+            <div class="space-y-4">
+                <h3 class="text-sm font-bold text-gray-400 dark:text-gray-500 uppercase tracking-wider ml-1">FAQ
+                    Terpopuler</h3>
+                <details class="group bg-white dark:bg-surface-dark rounded-2xl shadow-card border border-primary/20"
+                    open="">
+                    <summary class="flex items-center justify-between p-5 cursor-pointer list-none">
+                        <span class="font-semibold text-gray-700 dark:text-gray-200 pr-4">Bagaimana cara membuat
+                            room?</span>
+                        <span
+                            class="material-icons-round text-gray-400 group-open:rotate-180 transition-transform">expand_more</span>
+                    </summary>
+                    <div
+                        class="px-5 pb-5 text-sm text-gray-600 dark:text-gray-400 leading-relaxed border-t border-gray-50 dark:border-gray-800 pt-4">
+                        Untuk membuat room baru, Anda cukup masuk ke dashboard utama dan klik tombol <span
+                            class="font-bold text-primary">"+"</span> yang terletak di bagian navigasi atau layar utama.
+                        Masukkan detail yang diperlukan untuk memulai koordinasi pesanan grup Anda.
+                    </div>
+                </details>
+                <details class="group bg-white dark:bg-surface-dark rounded-2xl shadow-card border border-primary/20"
+                    open="">
+                    <summary class="flex items-center justify-between p-5 cursor-pointer list-none">
+                        <span class="font-semibold text-gray-700 dark:text-gray-200 pr-4">Bagaimana cara pesan?</span>
+                        <span
+                            class="material-icons-round text-gray-400 group-open:rotate-180 transition-transform">expand_more</span>
+                    </summary>
+                    <div
+                        class="px-5 pb-5 text-sm text-gray-600 dark:text-gray-400 leading-relaxed border-t border-gray-50 dark:border-gray-800 pt-4">
+                        Sangat mudah! Anda hanya perlu <span class="font-bold text-primary">mengklik link yang
+                            dibagikan</span> oleh pembuat room. Setelah masuk ke halaman room tersebut, silakan <span
+                            class="font-bold text-primary">mengisi formulir pesanan</span> sesuai dengan menu yang ingin
+                        Anda pesan.
+                    </div>
+                </details>
+                <details class="group bg-white dark:bg-surface-dark rounded-2xl shadow-card border border-primary/20"
+                    open="">
+                    <summary class="flex items-center justify-between p-5 cursor-pointer list-none">
+                        <span class="font-semibold text-gray-700 dark:text-gray-200 pr-4">Lupa password?</span>
+                        <span
+                            class="material-icons-round text-gray-400 group-open:rotate-180 transition-transform">expand_more</span>
+                    </summary>
+                    <div
+                        class="px-5 pb-5 text-sm text-gray-600 dark:text-gray-400 leading-relaxed border-t border-gray-50 dark:border-gray-800 pt-4">
+                        Jika Anda lupa kata sandi, silakan <span class="font-bold text-primary">hubungi admin</span>
+                        kami melalui tombol WhatsApp di bawah. Pastikan Anda melampirkan <span
+                            class="font-bold text-primary">bukti kepemilikan nomor telepon</span> yang terdaftar untuk
+                        proses verifikasi keamanan.
+                    </div>
+                </details>
+                <details class="group bg-white dark:bg-surface-dark rounded-2xl shadow-card border border-primary/20"
+                    open="">
+                    <summary class="flex items-center justify-between p-5 cursor-pointer list-none">
+                        <span class="font-semibold text-gray-700 dark:text-gray-200 pr-4">Cara membatalkan
+                            pesanan?</span>
+                        <span
+                            class="material-icons-round text-gray-400 group-open:rotate-180 transition-transform">expand_more</span>
+                    </summary>
+                    <div
+                        class="px-5 pb-5 text-sm text-gray-600 dark:text-gray-400 leading-relaxed border-t border-gray-50 dark:border-gray-800 pt-4">
+                        Anda dapat membatalkan pesanan dengan <span class="font-bold text-primary">mengklik ikon hapus
+                            (trash bin)</span> pada halaman detail pesanan Anda. Harap diperhatikan bahwa pembatalan
+                        hanya dapat dilakukan <span class="font-bold text-primary">sebelum batas waktu (deadline)</span>
+                        yang ditentukan oleh admin room.
+                    </div>
+                </details>
+            </div>
+        </div>
+        <div
+            class="absolute bottom-0 w-full bg-gradient-to-t from-background-light dark:from-background-dark via-background-light/95 dark:via-background-dark/95 to-transparent px-6 pb-12 pt-8 z-20">
+            <button
+                class="w-full bg-[#25D366] hover:bg-[#128C7E] text-white py-4 rounded-2xl flex items-center justify-center gap-3 shadow-lg shadow-[#25D366]/20 transition-all active:scale-[0.98]">
+                <svg class="w-6 h-6 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.438 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z">
+                    </path>
+                </svg>
+                <span class="font-bold">Hubungi Admin via WhatsApp</span>
+            </button>
+        </div>
+        <div class="absolute bottom-1 left-0 right-0 flex justify-center z-30 pointer-events-none">
+            <div class="w-32 h-1 bg-gray-300 dark:bg-gray-700 rounded-full"></div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<!-- Host Dashboard -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Detail Pesanan Saya - Buka Puasa App</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f48c25",
+                        "primary-dark": "#d6761b",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#221910",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2d241b",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px", "2xl": "1.5rem", "3xl": "2rem" },
+                    boxShadow: {
+                        'soft': '0 10px 40px -10px rgba(244, 140, 37, 0.1)',
+                        'card': '0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02)',
+                        'fab': '0 20px 25px -5px rgba(244, 140, 37, 0.4), 0 10px 10px -5px rgba(244, 140, 37, 0.2)',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-100 min-h-screen relative overflow-hidden flex flex-col items-center">
+    <div
+        class="w-full max-w-md h-full min-h-screen bg-background-light dark:bg-background-dark relative shadow-2xl overflow-y-auto pb-32">
+        <div class="h-12 w-full flex justify-between items-center px-6 pt-2">
+            <span class="text-sm font-semibold">9:41</span>
+            <div class="flex gap-1.5">
+                <div class="w-4 h-4 rounded-full bg-gray-900 dark:bg-white opacity-20"></div>
+                <div class="w-4 h-4 rounded-full bg-gray-900 dark:bg-white opacity-20"></div>
+                <div class="w-6 h-3 rounded-full border border-gray-900 dark:border-white opacity-40"></div>
+            </div>
+        </div>
+        <header
+            class="px-6 pt-4 pb-2 flex items-center gap-4 sticky top-0 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm z-20">
+            <button
+                class="w-10 h-10 rounded-full border border-gray-200 dark:border-gray-700 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                <span class="material-icons-round text-2xl">arrow_back</span>
+            </button>
+            <h1 class="text-xl font-bold text-gray-900 dark:text-white leading-tight flex-1 text-center pr-10">Detail
+                Pesanan Saya</h1>
+        </header>
+        <section class="px-6 py-4">
+            <div
+                class="bg-white dark:bg-surface-dark rounded-3xl p-6 shadow-card border border-gray-100 dark:border-gray-800 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-bl-full -mr-8 -mt-8"></div>
+                <div class="relative z-10">
+                    <div class="flex justify-between items-start mb-2">
+                        <span
+                            class="px-3 py-1 rounded-full bg-green-100 dark:bg-green-900/30 text-green-700 dark:text-green-400 text-xs font-bold uppercase tracking-wider">Open
+                            Order</span>
+                        <div class="flex items-center gap-1 text-red-500 font-semibold text-xs">
+                            <span class="material-icons-round text-sm">timer</span>
+                            <span>Ends in 45m</span>
+                        </div>
+                    </div>
+                    <h2 class="text-2xl font-extrabold text-gray-900 dark:text-white mb-1">Marketing Team Bukber</h2>
+                    <div class="flex items-center text-gray-500 dark:text-gray-400 text-sm mb-4">
+                        <span class="material-icons-round text-base mr-1 text-primary">storefront</span>
+                        Sate Khas Senayan
+                    </div>
+                    <button
+                        class="w-full mb-4 bg-gray-50 dark:bg-gray-800/50 border border-gray-100 dark:border-gray-800 text-primary font-bold py-2.5 rounded-xl flex items-center justify-center gap-2 transition-colors active:scale-[0.98]">
+                        <span class="material-symbols-outlined text-xl">qr_code_2</span>
+                        <span class="text-sm">Lihat Detail Room</span>
+                    </button>
+                    <div class="flex items-center gap-2 pt-4 border-t border-gray-100 dark:border-gray-800">
+                        <div class="flex -space-x-2">
+                            <img alt="Participant"
+                                class="inline-block h-8 w-8 rounded-full ring-2 ring-white dark:ring-surface-dark object-cover"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBP36txgL1kYEgelnx6UHXS15_XARxVHmbjx8aoFSweacAgfkwfocfrKgH2iBSkMN8foudz_e6PTKkAEZIHI2BrVUYf3srb-9-xyy2uO2p5MF1tmcqzILvTWPQwV3siyBlOL19XMZicFtQOyeRT14WgfLbipJ88wGS2u2Eakf6onY4o7b2vJz2et7wzY1liVE17GvjUml4kLYaaGv8YQKKRpJFCoGoHrgOD6bx-ffmwAeaDE9NC2GIiFkv1GuUgJO_4UgGCW_iBRIgQ" />
+                            <img alt="Participant"
+                                class="inline-block h-8 w-8 rounded-full ring-2 ring-white dark:ring-surface-dark object-cover"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVOkngYE4gpgr08SDO4UbiA0Z6WrB0a3FqVgxaWX_KeaaCqBzuDclFRpm4NkgOOgp3Kw2VR1P7cq2_OYxA3iIOYNJIEF4_SY2KtOZsa6QYTK0yjDZ-Phkh4-TafNQq1GQzbD_qvD5IpO6keXO785QfVo2jGvDnqZP2EmB1EbxLICWD0UF0lb3qZnxo2C8KHcpVMnI4DlGUTrjZAb5oNDniJ88HV7GgdcxfvVrCs2oNwx8sLw-Zyuh6qhyx9aeqUOTNacMOYqC81VRE" />
+                            <img alt="Participant"
+                                class="inline-block h-8 w-8 rounded-full ring-2 ring-white dark:ring-surface-dark object-cover"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPW2rnb13Db5DC5gbpqrriU2ScDUbxoYvk5_e12SJ9046qdvGCHcO2xNtXDv3PhwX1F0HHgWFyHhcSfQotWuVrUV-qs0awgs3aSQWdqQDRHPHhsTDpw98u2rrU9whajgtgM2qZenPQQOo7rWqlcn_d7jr4YA8TtLQWDIzk5mr7KYFbX0q7m0kAK8eJSyVz63s-V4DD43kMpuhN_7_G7yGc18e2uPJAG1yfzK6gjgf0JFzXMvNlypHeYFW7KudlxEm7AqsRytCsuQur" />
+                        </div>
+                        <span class="text-xs text-gray-500 dark:text-gray-400 font-medium">+8 others joined</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <main class="px-6 pb-24">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-lg font-bold text-gray-900 dark:text-white">Pesanan Saya</h3>
+            </div>
+            <div
+                class="bg-white dark:bg-surface-dark rounded-3xl p-5 shadow-card border border-gray-100 dark:border-gray-800 mb-6">
+                <div class="flex gap-4 mb-4">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-gray-100 dark:bg-gray-800 flex items-center justify-center shrink-0">
+                        <span class="text-2xl">🍢</span>
+                    </div>
+                    <div class="flex-1">
+                        <h4 class="font-bold text-gray-900 dark:text-white">Sate Ayam Madura</h4>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 line-clamp-1">Bumbu kacang dipisah,
+                            ekstra bawang goreng</p>
+                        <div class="mt-2 flex items-center gap-2">
+                            <span
+                                class="text-xs font-bold bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 px-2 py-0.5 rounded">Qty:
+                                1</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-px w-full bg-gray-100 dark:bg-gray-800 mb-4"></div>
+                <div class="flex gap-4 mb-4">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-gray-100 dark:bg-gray-800 flex items-center justify-center shrink-0">
+                        <span class="text-2xl">🍚</span>
+                    </div>
+                    <div class="flex-1">
+                        <h4 class="font-bold text-gray-900 dark:text-white">Nasi Putih</h4>
+                        <div class="mt-2 flex items-center gap-2">
+                            <span
+                                class="text-xs font-bold bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 px-2 py-0.5 rounded">Qty:
+                                1</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="h-px w-full bg-gray-100 dark:bg-gray-800 mb-4"></div>
+                <div class="flex gap-4">
+                    <div
+                        class="w-16 h-16 rounded-2xl bg-gray-100 dark:bg-gray-800 flex items-center justify-center shrink-0">
+                        <span class="text-2xl">🍹</span>
+                    </div>
+                    <div class="flex-1">
+                        <h4 class="font-bold text-gray-900 dark:text-white">Es Jeruk Kelapa</h4>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 mt-1 line-clamp-1">Less sugar</p>
+                        <div class="mt-2 flex items-center gap-2">
+                            <span
+                                class="text-xs font-bold bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-300 px-2 py-0.5 rounded">Qty:
+                                2</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex gap-3 mt-6">
+                    <button
+                        class="flex-1 bg-primary hover:bg-primary-dark text-white font-bold py-3 rounded-2xl shadow-lg shadow-primary/20 flex items-center justify-center gap-2 transition-transform active:scale-95 text-sm">
+                        <span class="material-icons-round text-lg">edit_note</span>
+                        Edit Pesanan
+                    </button>
+                </div>
+            </div>
+            <div class="mt-8">
+                <h3 class="text-lg font-bold text-gray-900 dark:text-white mb-4">Pesanan Teman Lain</h3>
+                <div class="space-y-3">
+                    <div
+                        class="bg-white dark:bg-surface-dark p-4 rounded-2xl border border-gray-100 dark:border-gray-800 flex items-start gap-3">
+                        <img alt="Friend Avatar" class="w-10 h-10 rounded-full object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfMh4f0iddaaHAwsFv1FUXkcMYCyF5NUQtCFb_9_3Sc3HQ5UXQKcxU2A5UBroNvA1C_KxUkb0zynfaZMA8-gWLnJJ2FwGH92jzIZJa15ZZbzrSmoxxg3yObIv0zvzehmEF2pm9VY8PbPSGrW2iXtKVlxzgCUHiZICY-Euv7HLf574J56-TCv-pcpkJoEPbE9T1sS8AmiQcbXRuMWhyfjFUf5WHlHVV8oClQBnwsu4sdwCeDJcj4Vv8UbA118UfW7-qhkvXnrrPmrmg" />
+                        <div class="flex-1">
+                            <h5 class="font-bold text-sm text-gray-900 dark:text-white">Sarah W.</h5>
+                            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Sate Kambing (1), Es Teh Manis (1)
+                            </p>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-surface-dark p-4 rounded-2xl border border-gray-100 dark:border-gray-800 flex items-start gap-3">
+                        <img alt="Friend Avatar" class="w-10 h-10 rounded-full object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuAuEURKiJlWiJgMO9hxNHrFmAxYcVyhRm5LSGvYDY85GBZvEktcWYh94n1N-TNKMm2OMZz_Tl1j_pNlvoiMMpkB_kYNPw44BtQLJqZ8xmQ7aj54Fph3uXi_w2L4kg0P3X3Ne_wCzJi0kegh5HAVdcUh84LOltjA_G34Aga8st8g_3RriGnkyS9I5fcPbFjzzIMxFuld2SE1lESjfhgvimWG_Floml4RDNaNFNQuQ4d9JiKDFgkuKu9nbfwiRxCzkwMEK7T2KP1c7v4x" />
+                        <div class="flex-1">
+                            <h5 class="font-bold text-sm text-gray-900 dark:text-white">Budi Santoso</h5>
+                            <p class="text-xs text-gray-500 dark:text-gray-400 mt-1">Sate Ayam (2), Nasi Putih (2), Jus
+                                Alpukat (1)</p>
+                        </div>
+                    </div>
+                    <button
+                        class="w-full py-3 text-center text-sm font-semibold text-gray-500 hover:text-primary transition-colors">
+                        Lihat Semua Pesanan (8 lagi)
+                    </button>
+                </div>
+            </div>
+        </main>
+        <div
+            class="fixed bottom-0 w-full max-w-md bg-white/90 dark:bg-surface-dark/90 backdrop-blur-lg border-t border-gray-100 dark:border-gray-800 p-6 z-30">
+            <div class="flex gap-4">
+                <button
+                    class="flex-1 py-3.5 px-4 rounded-2xl bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white font-bold text-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                    Share Link
+                </button>
+                <button
+                    class="flex-[1.5] py-3.5 px-4 rounded-2xl bg-green-600 text-white font-bold text-sm hover:bg-green-700 shadow-lg shadow-green-600/20 transition-colors flex items-center justify-center gap-2">
+                    <span class="material-icons-round text-sm">check_circle</span>
+                    Sudah Benar
+                </button>
+            </div>
+            <div class="flex justify-center mt-4 pointer-events-none">
+                <div class="w-32 h-1 bg-gray-300 dark:bg-gray-600 rounded-full"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<!-- Input Pesanan Peserta -->
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Input Pesanan Peserta - Buka Puasa Bersama</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f48c25",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#221910",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            -webkit-tap-highlight-color: transparent;
+            padding-bottom: env(safe-area-inset-bottom);
+            min-height: 100dvh;
+        }
+
+        .ios-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .ios-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-100 antialiased">
+    <div class="max-w-md mx-auto min-h-screen relative flex flex-col">
+        <div class="h-48 w-full relative overflow-hidden rounded-b-xl">
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent z-10"></div>
+            <img alt="Warm restaurant interior with lights" class="w-full h-full object-cover"
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuBYCrROsE01n6x_yyoxJ_02JP0ddCkUfTf-DZ7dmW1IxUpdMjfdQS4ZK7qXaB3xL4jvrBCyk2qwuJ-mJEVRG3beaRB6nMiqNhbbR3SXr8Z9Io-FCJ7t7hQqYwLevOMS2MVqUBJ44nn-pvDHkldKTmTLga8i48jjtNWMT03sw0x_G2yJaQH3Bjry9VMUrIdk9B5RUuNI6vJBZ6ZpxBITR3MXbhRSZWrckLh_f63TYboBMEj5TOqF3kz8Oj38kzRxHsdO1dGpadpgZ_sy" />
+            <div class="absolute bottom-4 left-6 right-6 z-20">
+                <span
+                    class="inline-flex items-center gap-1 bg-primary/90 backdrop-blur-sm text-white text-xs font-bold px-3 py-1 rounded-full mb-2 shadow-lg">
+                    <span class="material-icons-round text-sm">event</span>
+                    Bukber 2024
+                </span>
+                <h1 class="text-2xl font-bold text-white leading-tight mb-1 drop-shadow-md">
+                    Alumni SMA 1 Angkatan 2015
+                </h1>
+                <div class="flex items-center text-white/90 text-sm font-medium">
+                    <span class="material-icons-round text-base mr-1">restaurant</span>
+                    Sate Khas Senayan, Menteng
+                </div>
+            </div>
+        </div>
+        <div class="px-6 py-4 -mt-4 relative z-30">
+            <div
+                class="bg-white dark:bg-[#2c2219] p-3 rounded-xl shadow-lg shadow-primary/5 border border-primary/10 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <div
+                        class="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-bold overflow-hidden">
+                        <img alt="Portrait of Budi Santoso" class="w-full h-full object-cover"
+                            src="https://lh3.googleusercontent.com/aida-public/AB6AXuCABEBchWScdbeDs1ExKzwU75bagNJECOHNCQ0TeBIXludRrR0jybXKzGFuupxwPEEF8lSKOmzT8GFTB8ZX2jRf6bYZMaO3umh4BIlyyoueP1I1XXGCDwoOvjeR_t3qDRgEv-6YoY85bomZ2o7e9TfOeonuE2x2O59U77MrRgW7niiaIzyLzosl5yaH0_iuvig2O_D0wPrzs52hudfDZ3renvzHvr7zkRBDvu8WJu4Cf4qf6EOTrff22HnQyckLDxNadbdg6rVsj8S6" />
+                    </div>
+                    <div>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 font-medium uppercase tracking-wider">Host
+                        </p>
+                        <p class="text-sm font-bold text-gray-800 dark:text-white">Budi Santoso</p>
+                    </div>
+                </div>
+                <a class="w-10 h-10 rounded-full bg-primary text-white flex items-center justify-center shadow-md active:scale-95 transition-transform"
+                    href="tel:+62812345678">
+                    <span class="material-icons-round">whatsapp</span>
+                </a>
+            </div>
+        </div>
+        <div class="flex-1 px-6 pb-24">
+            <div class="mb-8">
+                <h2 class="text-lg font-bold mb-4 flex items-center gap-2 text-gray-800 dark:text-white">
+                    <span class="w-1 h-6 bg-primary rounded-full"></span>
+                    Isi Pesananmu
+                </h2>
+                <form class="space-y-6">
+                    <div class="grid grid-cols-2 gap-3">
+                        <div class="group">
+                            <label
+                                class="block text-[11px] font-bold text-gray-400 dark:text-gray-500 mb-1 ml-1 uppercase tracking-wider"
+                                for="name">Nama</label>
+                            <div class="relative">
+                                <span
+                                    class="material-icons-round absolute left-3.5 top-2.5 text-gray-400 text-lg">person</span>
+                                <input
+                                    class="w-full pl-10 pr-3 py-2.5 bg-gray-100 dark:bg-[#1a120a] border-0 ring-1 ring-gray-200 dark:ring-gray-800 rounded-xl text-sm text-gray-500 dark:text-gray-400 font-medium cursor-not-allowed outline-none"
+                                    id="name" readonly="" type="text" value="Siti Aminah" />
+                            </div>
+                        </div>
+                        <div class="group">
+                            <label
+                                class="block text-[11px] font-bold text-gray-400 dark:text-gray-500 mb-1 ml-1 uppercase tracking-wider"
+                                for="phone">WhatsApp</label>
+                            <div class="relative">
+                                <span
+                                    class="material-icons-round absolute left-3.5 top-2.5 text-gray-400 text-lg">phone_iphone</span>
+                                <input
+                                    class="w-full pl-10 pr-3 py-2.5 bg-gray-100 dark:bg-[#1a120a] border-0 ring-1 ring-gray-200 dark:ring-gray-800 rounded-xl text-sm text-gray-500 dark:text-gray-400 font-medium cursor-not-allowed outline-none"
+                                    id="phone" readonly="" type="tel" value="081234567890" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="group">
+                        <label class="block text-sm font-bold text-gray-800 dark:text-gray-200 mb-2 ml-1"
+                            for="menu-list">Pilihan Menu</label>
+                        <div
+                            class="mb-4 bg-amber-50 dark:bg-amber-900/20 border border-amber-200/50 dark:border-amber-800/30 rounded-xl p-3 flex items-start gap-3">
+                            <span class="material-icons-round text-amber-500 text-lg">info</span>
+                            <p class="text-xs text-amber-800 dark:text-amber-300 font-medium leading-relaxed">
+                                Masukkan nama sesuai menu untuk memudahkan pencatatan
+                            </p>
+                        </div>
+                        <div class="space-y-4" id="menu-list">
+                            <div class="flex flex-col gap-2">
+                                <div class="flex items-start gap-2">
+                                    <div class="relative flex-grow">
+                                        <span
+                                            class="material-icons-round absolute left-3 top-3 text-gray-400 text-sm">restaurant_menu</span>
+                                        <input
+                                            class="w-full pl-9 pr-3 py-2.5 bg-white dark:bg-[#2c2219] border-0 ring-1 ring-gray-200 dark:ring-gray-700 rounded-xl focus:ring-2 focus:ring-primary dark:focus:ring-primary text-sm text-gray-800 dark:text-gray-100 placeholder-gray-400 shadow-sm"
+                                            placeholder="Nama menu (misal: Sate Ayam)" type="text" />
+                                    </div>
+                                    <div
+                                        class="flex items-center bg-white dark:bg-[#2c2219] rounded-xl ring-1 ring-gray-200 dark:ring-gray-700 h-[42px] px-1 shadow-sm shrink-0">
+                                        <button
+                                            class="w-8 h-full flex items-center justify-center text-gray-400 hover:text-primary active:scale-90 transition-transform"
+                                            type="button">
+                                            <span class="material-icons-round text-base">remove</span>
+                                        </button>
+                                        <span
+                                            class="w-6 text-center text-sm font-semibold text-gray-800 dark:text-white">1</span>
+                                        <button
+                                            class="w-8 h-full flex items-center justify-center text-gray-400 hover:text-primary active:scale-90 transition-transform"
+                                            type="button">
+                                            <span class="material-icons-round text-base">add</span>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="ml-2 flex items-center gap-2">
+                                    <span
+                                        class="material-symbols-outlined text-[16px] text-gray-400">subdirectory_arrow_right</span>
+                                    <input
+                                        class="flex-grow text-xs py-1.5 px-3 bg-gray-50 dark:bg-[#1a120a] border-0 ring-1 ring-gray-100 dark:ring-gray-800 rounded-lg focus:ring-1 focus:ring-primary/50 text-gray-600 dark:text-gray-400 placeholder-gray-400"
+                                        placeholder="Catatan: paha bawah, gula sedikit..." type="text" />
+                                </div>
+                            </div>
+                            <div class="flex flex-col gap-2">
+                                <div class="flex items-start gap-2">
+                                    <div class="relative flex-grow">
+                                        <span
+                                            class="material-icons-round absolute left-3 top-3 text-gray-400 text-sm">restaurant_menu</span>
+                                        <input
+                                            class="w-full pl-9 pr-3 py-2.5 bg-white dark:bg-[#2c2219] border-0 ring-1 ring-gray-200 dark:ring-gray-700 rounded-xl focus:ring-2 focus:ring-primary dark:focus:ring-primary text-sm text-gray-800 dark:text-gray-100 placeholder-gray-400 shadow-sm"
+                                            placeholder="Nama menu" type="text" value="Es Jeruk Nipis" />
+                                    </div>
+                                    <div
+                                        class="flex items-center bg-white dark:bg-[#2c2219] rounded-xl ring-1 ring-gray-200 dark:ring-gray-700 h-[42px] px-1 shadow-sm shrink-0">
+                                        <button
+                                            class="w-8 h-full flex items-center justify-center text-gray-400 hover:text-primary active:scale-90 transition-transform"
+                                            type="button">
+                                            <span class="material-icons-round text-base">remove</span>
+                                        </button>
+                                        <span
+                                            class="w-6 text-center text-sm font-semibold text-gray-800 dark:text-white">1</span>
+                                        <button
+                                            class="w-8 h-full flex items-center justify-center text-gray-400 hover:text-primary active:scale-90 transition-transform"
+                                            type="button">
+                                            <span class="material-icons-round text-base">add</span>
+                                        </button>
+                                    </div>
+                                    <button
+                                        class="w-[42px] h-[42px] flex items-center justify-center text-red-400 hover:text-red-500 bg-red-50 dark:bg-red-500/10 rounded-xl active:scale-90 transition-transform shrink-0"
+                                        type="button">
+                                        <span class="material-icons-round text-lg">delete_outline</span>
+                                    </button>
+                                </div>
+                                <div class="ml-2 flex items-center gap-2">
+                                    <span
+                                        class="material-symbols-outlined text-[16px] text-gray-400">subdirectory_arrow_right</span>
+                                    <input
+                                        class="flex-grow text-xs py-1.5 px-3 bg-gray-50 dark:bg-[#1a120a] border-0 ring-1 ring-gray-100 dark:ring-gray-800 rounded-lg focus:ring-1 focus:ring-primary/50 text-gray-600 dark:text-gray-400 placeholder-gray-400"
+                                        placeholder="Catatan per menu..." type="text"
+                                        value="Es jangan terlalu banyak" />
+                                </div>
+                            </div>
+                        </div>
+                        <button
+                            class="mt-4 w-full py-2.5 border border-dashed border-primary/40 rounded-xl text-primary text-sm font-semibold hover:bg-primary/5 active:bg-primary/10 transition-colors flex items-center justify-center gap-2"
+                            type="button">
+                            <span class="material-icons-round text-base">add_circle_outline</span>
+                            Tambah Menu Lain
+                        </button>
+                    </div>
+                    <div class="group">
+                        <label class="block text-sm font-medium text-gray-600 dark:text-gray-300 mb-1 ml-1"
+                            for="notes">Catatan Umum (Opsional)</label>
+                        <div class="relative">
+                            <span
+                                class="material-icons-round absolute left-4 top-3.5 text-gray-400 group-focus-within:text-primary transition-colors">edit_note</span>
+                            <input
+                                class="w-full pl-11 pr-4 py-3 bg-white dark:bg-[#2c2219] border-0 ring-1 ring-gray-200 dark:ring-gray-700 rounded-xl focus:ring-2 focus:ring-primary dark:focus:ring-primary text-gray-800 dark:text-gray-100 placeholder-gray-400 shadow-sm transition-shadow"
+                                id="notes" placeholder="Jangan pedas, es dipisah, dll." type="text" />
+                        </div>
+                    </div>
+                    <button
+                        class="w-full bg-primary hover:bg-orange-600 text-white font-bold py-4 rounded-full shadow-lg shadow-primary/30 active:scale-[0.98] transition-all flex items-center justify-center gap-2 mt-4"
+                        type="button">
+                        <span>Kirim Pesanan</span>
+                        <span class="material-icons-round text-lg">send</span>
+                    </button>
+                </form>
+            </div>
+            <div class="relative flex py-2 items-center mb-8">
+                <div class="flex-grow border-t border-gray-200 dark:border-gray-700"></div>
+                <span
+                    class="flex-shrink-0 mx-4 text-gray-400 dark:text-gray-500 text-xs font-semibold uppercase tracking-widest">Transparansi</span>
+                <div class="flex-grow border-t border-gray-200 dark:border-gray-700"></div>
+            </div>
+            <div class="space-y-4">
+                <div class="flex items-center justify-between mb-4">
+                    <h2 class="text-lg font-bold flex items-center gap-2 text-gray-800 dark:text-white">
+                        Daftar Pesanan Saat Ini
+                    </h2>
+                    <span
+                        class="bg-primary/10 text-primary dark:bg-primary/20 dark:text-primary text-xs font-bold px-3 py-1 rounded-full">
+                        8 Peserta
+                    </span>
+                </div>
+                <div class="flex flex-col gap-3">
+                    <div
+                        class="bg-white dark:bg-[#2c2219] p-4 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 flex gap-4 items-start">
+                        <div
+                            class="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-blue-400 to-blue-600 text-white flex items-center justify-center font-bold shadow-sm text-sm">
+                            AD
+                        </div>
+                        <div class="flex-grow">
+                            <div class="flex justify-between items-start">
+                                <h3 class="font-bold text-gray-800 dark:text-gray-100 text-sm">Andi Dermawan</h3>
+                                <span
+                                    class="text-[10px] text-gray-400 dark:text-gray-500 font-medium bg-gray-100 dark:bg-gray-800 px-2 py-0.5 rounded-full">10:42
+                                    AM</span>
+                            </div>
+                            <p class="text-sm text-gray-600 dark:text-gray-300 mt-1 leading-relaxed">
+                                Sate Ayam (10), Lontong (1), Es Jeruk Nipis (1)
+                            </p>
+                            <div
+                                class="mt-2 flex items-center gap-1 text-xs text-primary bg-primary/5 dark:bg-primary/10 self-start inline-flex px-2 py-1 rounded-lg">
+                                <span class="material-icons-round text-[14px]">sticky_note_2</span>
+                                <span>Bumbu kacang dipisah ya</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div
+                        class="bg-white dark:bg-[#2c2219] p-4 rounded-2xl shadow-sm border border-gray-100 dark:border-gray-800 flex gap-4 items-start">
+                        <div
+                            class="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-pink-400 to-pink-600 text-white flex items-center justify-center font-bold shadow-sm text-sm">
+                            RF
+                        </div>
+                        <div class="flex-grow">
+                            <div class="flex justify-between items-start">
+                                <h3 class="font-bold text-gray-800 dark:text-gray-100 text-sm">Rina Fitriani</h3>
+                                <span
+                                    class="text-[10px] text-gray-400 dark:text-gray-500 font-medium bg-gray-100 dark:bg-gray-800 px-2 py-0.5 rounded-full">10:30
+                                    AM</span>
+                            </div>
+                            <p class="text-sm text-gray-600 dark:text-gray-300 mt-1 leading-relaxed">
+                                Tahu Telur (1), Nasi Putih (1), Jus Alpukat (1)
+                            </p>
+                        </div>
+                    </div>
+                    <div class="text-center py-4">
+                        <button
+                            class="text-sm font-medium text-primary hover:text-orange-600 transition-colors flex items-center justify-center gap-1 mx-auto">
+                            Lihat 5 pesanan lainnya
+                            <span class="material-icons-round text-lg">expand_more</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-8 mb-6 text-center">
+                <p class="text-xs text-gray-400 dark:text-gray-600">
+                    Dibuat dengan ❤️ untuk Buka Puasa Bersama
+                </p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<!-- Detail & Monitoring Room -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Room Detail &amp; Monitoring</title>
+    <link href="https://fonts.googleapis.com" rel="preconnect" />
+    <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f48c25",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#221910",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3rem", "full": "9999px" },
+                },
+            },
+        }
+    </script>
+    <style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        body {
+            min-height: max(884px, 100dvh);
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="font-display bg-background-light dark:bg-background-dark text-gray-800 dark:text-white min-h-screen flex flex-col antialiased selection:bg-primary/30">
+    <header
+        class="sticky top-0 z-50 bg-background-light/80 dark:bg-background-dark/80 backdrop-blur-md px-6 pt-12 pb-4 flex items-center justify-between border-b border-primary/5 dark:border-white/5">
+        <button class="p-2 -ml-2 rounded-full hover:bg-primary/10 dark:hover:bg-white/10 transition-colors">
+            <span class="material-icons text-gray-800 dark:text-white">arrow_back</span>
+        </button>
+        <div class="flex flex-col items-center">
+            <h1 class="text-lg font-bold">Room Detail</h1>
+            <span class="text-xs text-gray-500 dark:text-gray-400">Bukber Alumni SMA 1</span>
+        </div>
+        <div
+            class="flex items-center gap-1 bg-green-100 dark:bg-green-900/30 px-3 py-1 rounded-full border border-green-200 dark:border-green-800">
+            <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+            <span class="text-xs font-semibold text-green-700 dark:text-green-400 uppercase tracking-wider">Live</span>
+        </div>
+    </header>
+    <main class="flex-1 px-6 pt-6 pb-40 flex flex-col gap-8">
+        <section class="flex flex-col items-center">
+            <div
+                class="bg-white dark:bg-white/5 p-8 rounded-[2.5rem] shadow-xl shadow-primary/5 dark:shadow-none w-full max-w-sm flex flex-col items-center border border-primary/10 dark:border-white/10 relative overflow-hidden">
+                <div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -mr-10 -mt-10 blur-2xl"></div>
+                <div class="absolute bottom-0 left-0 w-24 h-24 bg-primary/10 rounded-full -ml-8 -mb-8 blur-xl"></div>
+                <h2
+                    class="text-sm font-semibold text-gray-400 dark:text-gray-500 mb-6 uppercase tracking-widest text-center">
+                    Scan to Join</h2>
+                <div
+                    class="bg-white p-4 rounded-xl shadow-sm border border-gray-100 dark:border-gray-800 mb-6 relative group">
+                    <img alt="QR Code for joining the room"
+                        class="w-48 h-48 mix-blend-multiply dark:mix-blend-normal dark:invert dark:bg-transparent rounded-lg"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuC_UbQCDUaXJaLAb8KqfuPhuwI9PmSr9LPobKro6qFPpS-SsPCM7jsb0RjJODuhfiiCWOAiPF6hvmf64PCNf_2dS3AvSIBAog4LAvEIUnJ550lboVilcOmQnoUsN42iInExchSeLyrEYwylusI1EIeb2GW4b92__oqjQjsDtJ1jU21AFV_0tui6omWMpeVS-JLGLJSceo0JW422RdDqV7Lxc0U-y11wOdcigkAGXdiY8vx-KOFNFTLzoQYZkfHCAwwdM0Pe7RBppI7u" />
+                    <div
+                        class="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity bg-white/90 dark:bg-black/90 rounded-lg">
+                        <span class="font-bold text-2xl text-primary tracking-widest">882-991</span>
+                    </div>
+                </div>
+                <div class="flex flex-col items-center gap-2 w-full">
+                    <p class="text-2xl font-bold tracking-tight text-gray-900 dark:text-white">ID: 882-991</p>
+                    <p class="text-xs text-center text-gray-400 mb-4 max-w-[200px]">Share this code or link with your
+                        friends to start ordering.</p>
+                    <button
+                        class="w-full py-4 px-6 bg-primary/10 dark:bg-primary/20 hover:bg-primary/20 dark:hover:bg-primary/30 text-primary dark:text-primary rounded-full flex items-center justify-center gap-2 font-bold transition-all active:scale-95">
+                        <span class="material-icons text-xl">content_copy</span>
+                        Salin Link Undangan
+                    </button>
+                </div>
+            </div>
+        </section>
+        <section class="flex flex-col gap-4">
+            <div class="flex items-center justify-between">
+                <h2 class="text-xl font-bold text-gray-900 dark:text-white">Ringkasan Pesanan</h2>
+            </div>
+            <div
+                class="bg-white dark:bg-white/5 p-5 rounded-2xl border border-primary/10 dark:border-white/10 shadow-sm shadow-primary/5">
+                <div class="flex flex-col gap-4">
+                    <div class="border-b border-gray-100 dark:border-gray-800 pb-3">
+                        <div class="flex justify-between items-start mb-1">
+                            <span class="text-gray-800 dark:text-gray-200 font-semibold">Ayam Bakar Madu</span>
+                            <span
+                                class="font-bold text-gray-900 dark:text-white bg-gray-100 dark:bg-gray-800 px-2 py-0.5 rounded text-sm">4x</span>
+                        </div>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 italic leading-relaxed">(2 Dada, 2 Paha,
+                            Semua Pedas Sedang)</p>
+                    </div>
+                    <div class="border-b border-gray-100 dark:border-gray-800 pb-3">
+                        <div class="flex justify-between items-start mb-1">
+                            <span class="text-gray-800 dark:text-gray-200 font-semibold">Nasi Goreng Kambing</span>
+                            <span
+                                class="font-bold text-gray-900 dark:text-white bg-gray-100 dark:bg-gray-800 px-2 py-0.5 rounded text-sm">3x</span>
+                        </div>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 italic leading-relaxed">(1 Tanpa Acar, 2
+                            Extra Telur Ceplok)</p>
+                    </div>
+                    <div class="border-b border-gray-100 dark:border-gray-800 pb-3">
+                        <div class="flex justify-between items-start mb-1">
+                            <span class="text-gray-800 dark:text-gray-200 font-semibold">Soto Betawi + Nasi</span>
+                            <span
+                                class="font-bold text-gray-900 dark:text-white bg-gray-100 dark:bg-gray-800 px-2 py-0.5 rounded text-sm">2x</span>
+                        </div>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 italic leading-relaxed">(1 Tanpa Seledri, 1
+                            Paha Atas)</p>
+                    </div>
+                    <div class="border-b border-gray-100 dark:border-gray-800 pb-3">
+                        <div class="flex justify-between items-start mb-1">
+                            <span class="text-gray-800 dark:text-gray-200 font-semibold">Es Teh Manis</span>
+                            <span
+                                class="font-bold text-gray-900 dark:text-white bg-gray-100 dark:bg-gray-800 px-2 py-0.5 rounded text-sm">8x</span>
+                        </div>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 italic leading-relaxed">(5 Kurang Gula, 3
+                            Normal)</p>
+                    </div>
+                    <div class="">
+                        <div class="flex justify-between items-start mb-1">
+                            <span class="text-gray-800 dark:text-gray-200 font-semibold">Es Campur Special</span>
+                            <span
+                                class="font-bold text-gray-900 dark:text-white bg-gray-100 dark:bg-gray-800 px-2 py-0.5 rounded text-sm">5x</span>
+                        </div>
+                        <p class="text-xs text-gray-500 dark:text-gray-400 italic leading-relaxed">(Semua Tanpa Tape)
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="flex flex-col gap-4">
+            <div
+                class="flex items-center justify-between sticky top-[88px] z-10 bg-background-light dark:bg-background-dark py-2">
+                <div class="flex items-baseline gap-2">
+                    <h2 class="text-xl font-bold text-gray-900 dark:text-white">Daftar Pesanan</h2>
+                    <span class="text-sm font-medium text-primary bg-primary/10 px-2 py-0.5 rounded-full">8/10</span>
+                </div>
+            </div>
+            <div class="flex flex-col gap-3">
+                <div
+                    class="group bg-white dark:bg-white/5 p-4 rounded-2xl flex items-center gap-4 border border-transparent hover:border-primary/30 transition-all shadow-sm shadow-primary/5">
+                    <img alt="Avatar of Budi Santoso"
+                        class="w-12 h-12 rounded-full object-cover border-2 border-primary/20"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBwnjBsopJO3OYaGR5Ml5kU-Fe710uq-wTl2rHGbCy7JYKuFU8RKRfZPQSTztrFv6DBrJg6FKXjQbyA7KOKX4oQHdLN7gyVPIckIPJiLr2gIi6U00RTDLTi2GPSM6PXFxwGIuNRldkaakAqOu05EIlTvdCZcqB7phcMJyicXCezzU5sJ9mPdMBSL5dGMkn2axOyuXAGNyiFvF0n0P7sZclq1ILp4G0W1qkJlVcfJEiwq58NpBZ_wgIMSkGFNliyDvtCDszeUFcLriYF" />
+                    <div class="flex-1 min-w-0">
+                        <h3 class="font-bold text-gray-900 dark:text-white truncate">Budi Santoso</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 truncate">Nasi Goreng Kambing + Es Teh</p>
+                    </div>
+                    <div class="text-right">
+                        <span class="material-icons text-green-500 text-sm">check_circle</span>
+                    </div>
+                </div>
+                <div
+                    class="group bg-white dark:bg-white/5 p-4 rounded-2xl flex items-center gap-4 border border-transparent hover:border-primary/30 transition-all shadow-sm shadow-primary/5">
+                    <img alt="Avatar of Siti Aminah"
+                        class="w-12 h-12 rounded-full object-cover border-2 border-primary/20"
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhZb6tR2n1wok8heJNvj7BbTZY45U9Mn96B3OtoEZLTlTxp66gce4B-qg_bOEqbjXJcku1d_3CtYemvyEnYHL6jj5rFLfj-DS0XLxvz_FV2JnJGFJh6pFdkFydt4INtbHTTp3vT9zEtIM2WugpwczddP2lKrHnMTXsGY7hyng-XBotu2cns7Wy9SxrM1imvSQlpZQ0mP8704814-LtbeH6eFnZtx6v9LOxjUIHy40t4JboiJavw5MTJP7-iwp5GLSm73NH31906qkw" />
+                    <div class="flex-1 min-w-0">
+                        <h3 class="font-bold text-gray-900 dark:text-white truncate">Siti Aminah</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 truncate">Ayam Bakar Madu + Jeruk Hangat</p>
+                    </div>
+                    <div class="text-right">
+                        <span class="material-icons text-green-500 text-sm">check_circle</span>
+                    </div>
+                </div>
+                <div
+                    class="group bg-white dark:bg-white/5 p-4 rounded-2xl flex items-center gap-4 border border-transparent hover:border-primary/30 transition-all shadow-sm shadow-primary/5">
+                    <div
+                        class="w-12 h-12 rounded-full bg-indigo-100 dark:bg-indigo-900/50 flex items-center justify-center border-2 border-indigo-200 dark:border-indigo-800 text-indigo-600 dark:text-indigo-300 font-bold text-lg">
+                        RA</div>
+                    <div class="flex-1 min-w-0">
+                        <h3 class="font-bold text-gray-900 dark:text-white truncate">Rizky Aditya</h3>
+                        <p class="text-sm text-gray-500 dark:text-gray-400 truncate">Sate Ayam 10 Tusuk</p>
+                    </div>
+                    <div class="text-right">
+                        <span class="material-icons text-gray-300 dark:text-gray-600 text-sm">pending</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <div
+        class="fixed bottom-0 left-0 right-0 z-40 bg-white/90 dark:bg-[#1a120b]/90 backdrop-blur-lg border-t border-primary/10 dark:border-white/5 px-6 pt-4 pb-8 shadow-[0_-10px_40px_-15px_rgba(0,0,0,0.1)]">
+        <div class="max-w-md mx-auto flex gap-4">
+            <button
+                class="flex-1 py-4 px-4 rounded-full border-2 border-primary/20 bg-primary/5 hover:bg-primary/10 text-primary font-bold flex items-center justify-center gap-2 transition-all active:scale-95">
+                <span class="material-symbols-outlined font-bold">content_paste</span>
+                Salin Pesanan
+            </button>
+            <button
+                class="flex-1 py-4 px-4 rounded-full bg-primary text-white shadow-lg shadow-primary/30 hover:shadow-primary/50 hover:bg-orange-600 font-bold flex items-center justify-center gap-2 transition-all active:scale-95">
+                <span class="material-icons">lock</span>
+                Tutup Room
+            </button>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<!-- Buat Room Baru -->
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Buat Room Baru - Buka Puasa App</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f48c25",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#221910",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+    <style>
+        body {
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #f48c25;
+        }
+
+        .toggle-checkbox:checked+.toggle-label {
+            background-color: #f48c25;
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-slate-800 dark:text-slate-100 min-h-screen flex justify-center">
+    <div
+        class="w-full max-w-md bg-background-light dark:bg-background-dark min-h-screen flex flex-col relative overflow-hidden shadow-2xl">
+        <header
+            class="px-6 pt-12 pb-4 flex items-center justify-between sticky top-0 z-20 bg-background-light/90 dark:bg-background-dark/90 backdrop-blur-md">
+            <button
+                class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors">
+                <span class="material-icons-round text-2xl text-slate-800 dark:text-white">chevron_left</span>
+            </button>
+            <h1 class="text-lg font-bold text-center flex-1">Buat Room Baru</h1>
+            <button
+                class="w-10 h-10 flex items-center justify-center rounded-full hover:bg-black/5 dark:hover:bg-white/10 transition-colors opacity-0 pointer-events-none">
+                <span class="material-icons-round text-2xl">more_horiz</span>
+            </button>
+        </header>
+        <main class="flex-1 px-6 pb-32 overflow-y-auto no-scrollbar">
+            <div
+                class="mb-8 mt-2 relative overflow-hidden rounded-lg bg-primary/10 dark:bg-primary/5 h-32 flex items-center justify-center">
+                <div class="absolute inset-0 bg-gradient-to-r from-primary/20 to-transparent opacity-50"></div>
+                <div class="absolute -right-4 -bottom-4 w-24 h-24 bg-primary/20 rounded-full blur-2xl"></div>
+                <div class="absolute left-8 top-8 w-16 h-16 bg-orange-300/20 rounded-full blur-xl"></div>
+                <div class="relative z-10 text-center">
+                    <span class="material-icons-round text-4xl text-primary mb-1">diversity_3</span>
+                    <p class="text-sm font-medium text-primary/80">Ajak teman bukber lebih mudah</p>
+                </div>
+            </div>
+            <form action="#" class="space-y-8" onsubmit="event.preventDefault();">
+                <div class="group">
+                    <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2 pl-1"
+                        for="eventName">Nama Acara</label>
+                    <div class="relative flex items-center transition-all duration-200">
+                        <span class="absolute left-4 text-slate-400 group-focus-within:text-primary transition-colors">
+                            <span class="material-icons-round text-[20px]">edit</span>
+                        </span>
+                        <input
+                            class="w-full bg-white dark:bg-white/5 border-none rounded-lg py-4 pl-12 pr-4 text-base font-medium placeholder-slate-400 focus:ring-2 focus:ring-primary/50 shadow-sm dark:text-white transition-all"
+                            id="eventName" placeholder="Contoh: Bukber Alumni SMA 1" type="text" />
+                    </div>
+                </div>
+                <div class="group">
+                    <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2 pl-1"
+                        for="restaurantName">Lokasi Bukber</label>
+                    <div class="relative flex items-center transition-all duration-200">
+                        <span class="absolute left-4 text-slate-400 group-focus-within:text-primary transition-colors">
+                            <span class="material-icons-round text-[20px]">restaurant</span>
+                        </span>
+                        <input
+                            class="w-full bg-white dark:bg-white/5 border-none rounded-lg py-4 pl-12 pr-4 text-base font-medium placeholder-slate-400 focus:ring-2 focus:ring-primary/50 shadow-sm dark:text-white transition-all"
+                            id="restaurantName" placeholder="Cari restoran..." type="text" />
+                        <button
+                            class="absolute right-3 p-1 rounded-full bg-slate-100 dark:bg-white/10 text-slate-500 hover:text-primary transition-colors"
+                            type="button">
+                            <span class="material-icons-round text-[18px]">map</span>
+                        </button>
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2 pl-1">Batas
+                        Pesanan (Deadline)</label>
+                    <div class="flex gap-3">
+                        <div class="flex-1 relative group">
+                            <span
+                                class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors pointer-events-none">
+                                <span class="material-icons-round text-[20px]">calendar_today</span>
+                            </span>
+                            <input
+                                class="w-full bg-white dark:bg-white/5 border-none rounded-lg py-4 pl-12 pr-3 text-base font-medium text-slate-700 dark:text-white focus:ring-2 focus:ring-primary/50 shadow-sm transition-all appearance-none [&amp;::-webkit-calendar-picker-indicator]:opacity-0"
+                                type="date" value="2024-03-25" />
+                        </div>
+                        <div class="w-1/3 relative group">
+                            <span
+                                class="absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 group-focus-within:text-primary transition-colors pointer-events-none">
+                                <span class="material-icons-round text-[20px]">schedule</span>
+                            </span>
+                            <input
+                                class="w-full bg-white dark:bg-white/5 border-none rounded-lg py-4 pl-10 pr-2 text-base font-medium text-slate-700 dark:text-white focus:ring-2 focus:ring-primary/50 shadow-sm transition-all text-center appearance-none [&amp;::-webkit-calendar-picker-indicator]:opacity-0"
+                                type="time" value="16:00" />
+                        </div>
+                    </div>
+                    <p class="text-xs text-slate-500 mt-2 pl-1 flex items-center gap-1">
+                        <span class="material-icons-round text-[14px]">info</span>
+                        Saran: Set 1 jam sebelum adzan Maghrib.
+                    </p>
+                </div>
+                <div class="group pb-4">
+                    <label class="block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-2 pl-1"
+                        for="notes">Catatan Tambahan <span
+                            class="text-slate-400 font-normal text-xs">(Opsional)</span></label>
+                    <div class="relative">
+                        <textarea
+                            class="w-full bg-white dark:bg-white/5 border-none rounded-lg p-4 text-base font-medium placeholder-slate-400 focus:ring-2 focus:ring-primary/50 shadow-sm dark:text-white resize-none transition-all"
+                            id="notes" placeholder="Misal: Bawa uang cash ya, dresscode putih..." rows="4"></textarea>
+                    </div>
+                </div>
+            </form>
+        </main>
+        <div
+            class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-background-light via-background-light to-transparent dark:from-background-dark dark:via-background-dark pt-12">
+            <button
+                class="w-full bg-primary hover:bg-orange-600 active:scale-[0.98] text-white font-bold text-lg py-4 rounded-full shadow-lg shadow-primary/30 flex items-center justify-center gap-2 transition-all duration-200 group">
+                <span class="material-icons-round group-hover:rotate-12 transition-transform">link</span>
+                Buat &amp; Bagikan Link
+            </button>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<!-- Host Dashboard -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Edit Pesanan Peserta - Buka Puasa App</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Round" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#f48c25",
+                        "primary-dark": "#d6761b",
+                        "background-light": "#f8f7f5",
+                        "background-dark": "#221910",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#2d241b",
+                    },
+                    fontFamily: {
+                        "display": ["Plus Jakarta Sans", "sans-serif"]
+                    },
+                    borderRadius: { "DEFAULT": "1rem", "lg": "2rem", "xl": "3xl", "full": "9999px", "2xl": "1.5rem", "3xl": "2rem" },
+                    boxShadow: {
+                        'soft': '0 10px 40px -10px rgba(244, 140, 37, 0.1)',
+                        'card': '0 4px 6px -1px rgba(0, 0, 0, 0.02), 0 2px 4px -1px rgba(0, 0, 0, 0.02)',
+                        'fab': '0 20px 25px -5px rgba(244, 140, 37, 0.4), 0 10px 10px -5px rgba(244, 140, 37, 0.2)',
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .no-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+
+        .no-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+    <style>
+        body {
+            min-height: max(884px, 100dvh);
+        }
+    </style>
+</head>
+
+<body
+    class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-100 min-h-screen relative overflow-hidden flex flex-col items-center">
+    <div
+        class="w-full max-w-md h-full min-h-screen bg-background-light dark:bg-background-dark relative shadow-2xl overflow-y-auto pb-40">
+        <div class="h-12 w-full flex justify-between items-center px-6 pt-2">
+            <span class="text-sm font-semibold">9:41</span>
+            <div class="flex gap-1.5">
+                <div class="w-4 h-4 rounded-full bg-gray-900 dark:bg-white opacity-20"></div>
+                <div class="w-4 h-4 rounded-full bg-gray-900 dark:bg-white opacity-20"></div>
+                <div class="w-6 h-3 rounded-full border border-gray-900 dark:border-white opacity-40"></div>
+            </div>
+        </div>
+        <div class="px-6 py-2 bg-amber-50 dark:bg-amber-900/20 border-b border-amber-100 dark:border-amber-900/30">
+            <div class="flex items-center gap-2 text-amber-700 dark:text-amber-400">
+                <span class="material-icons-round text-sm">admin_panel_settings</span>
+                <span class="text-xs font-bold uppercase tracking-wider">Mode Edit Pesanan Peserta</span>
+            </div>
+        </div>
+        <header
+            class="px-6 pt-4 pb-2 flex items-center gap-4 sticky top-0 bg-background-light/95 dark:bg-background-dark/95 backdrop-blur-sm z-20">
+            <button
+                class="w-10 h-10 rounded-full border border-gray-200 dark:border-gray-700 flex items-center justify-center hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors">
+                <span class="material-icons-round text-2xl">close</span>
+            </button>
+            <div class="flex-1 text-center">
+                <h1 class="text-lg font-bold text-gray-900 dark:text-white leading-tight">Edit Pesanan</h1>
+                <p class="text-xs text-gray-500 font-medium">Peserta: Sarah W.</p>
+            </div>
+            <div class="w-10"></div>
+        </header>
+        <section class="px-6 py-4">
+            <div
+                class="bg-white dark:bg-surface-dark rounded-3xl p-6 shadow-card border border-gray-100 dark:border-gray-800 relative overflow-hidden">
+                <div class="relative z-10">
+                    <div class="flex justify-between items-center mb-4">
+                        <div class="flex items-center gap-3">
+                            <img alt="Participant" class="h-12 w-12 rounded-2xl object-cover"
+                                src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfMh4f0iddaaHAwsFv1FUXkcMYCyF5NUQtCFb_9_3Sc3HQ5UXQKcxU2A5UBroNvA1C_KxUkb0zynfaZMA8-gWLnJJ2FwGH92jzIZJa15ZZbzrSmoxxg3yObIv0zvzehmEF2pm9VY8PbPSGrW2iXtKVlxzgCUHiZICY-Euv7HLf574J56-TCv-pcpkJoEPbE9T1sS8AmiQcbXRuMWhyfjFUf5WHlHVV8oClQBnwsu4sdwCeDJcj4Vv8UbA118UfW7-qhkvXnrrPmrmg" />
+                            <div>
+                                <h2 class="text-lg font-extrabold text-gray-900 dark:text-white">Sarah W.</h2>
+                                <p class="text-xs text-gray-500">Marketing Team Bukber</p>
+                            </div>
+                        </div>
+                        <button
+                            class="px-4 py-2 bg-gray-50 dark:bg-gray-800 text-primary font-bold text-xs rounded-xl flex items-center gap-2">
+                            <span class="material-symbols-outlined text-base">qr_code_2</span>
+                            Room Detail
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <main class="px-6">
+            <div class="flex justify-between items-center mb-4">
+                <h3 class="text-lg font-bold text-gray-900 dark:text-white">Detail Pesanan Sarah</h3>
+            </div>
+            <div class="space-y-4">
+                <div
+                    class="bg-white dark:bg-surface-dark rounded-3xl p-5 shadow-card border border-gray-100 dark:border-gray-800">
+                    <div class="flex gap-4">
+                        <div
+                            class="w-16 h-16 rounded-2xl bg-gray-100 dark:bg-gray-800 flex items-center justify-center shrink-0">
+                            <span class="text-2xl">🍢</span>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex justify-between items-start">
+                                <h4 class="font-bold text-gray-900 dark:text-white">Sate Kambing</h4>
+                                <button class="text-red-500">
+                                    <span class="material-icons-round text-xl">delete_outline</span>
+                                </button>
+                            </div>
+                            <div class="mt-3 flex items-center justify-between">
+                                <div class="flex items-center gap-3 bg-gray-50 dark:bg-gray-800 rounded-xl p-1 px-2">
+                                    <button
+                                        class="w-7 h-7 flex items-center justify-center rounded-lg bg-white dark:bg-gray-700 text-gray-500 shadow-sm"><span
+                                            class="material-icons-round text-sm">remove</span></button>
+                                    <span
+                                        class="font-bold text-sm w-4 text-center text-gray-900 dark:text-white">1</span>
+                                    <button
+                                        class="w-7 h-7 flex items-center justify-center rounded-lg bg-white dark:bg-gray-700 text-gray-500 shadow-sm"><span
+                                            class="material-icons-round text-sm">add</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <div class="flex items-center gap-2 mb-2 text-xs font-semibold text-gray-500">
+                            <span class="material-icons-round text-sm">notes</span>
+                            Catatan Pesanan
+                        </div>
+                        <textarea
+                            class="w-full bg-gray-50 dark:bg-gray-800/50 border-gray-100 dark:border-gray-800 rounded-xl text-xs focus:ring-primary focus:border-primary placeholder:text-gray-400"
+                            placeholder="Contoh: Bumbu kacang dipisah..." rows="2">Ekstra bumbu kecap</textarea>
+                    </div>
+                </div>
+                <div
+                    class="bg-white dark:bg-surface-dark rounded-3xl p-5 shadow-card border border-gray-100 dark:border-gray-800">
+                    <div class="flex gap-4">
+                        <div
+                            class="w-16 h-16 rounded-2xl bg-gray-100 dark:bg-gray-800 flex items-center justify-center shrink-0">
+                            <span class="text-2xl">🍹</span>
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex justify-between items-start">
+                                <h4 class="font-bold text-gray-900 dark:text-white">Es Teh Manis</h4>
+                                <button class="text-red-500">
+                                    <span class="material-icons-round text-xl">delete_outline</span>
+                                </button>
+                            </div>
+                            <div class="mt-3 flex items-center justify-between">
+                                <div class="flex items-center gap-3 bg-gray-50 dark:bg-gray-800 rounded-xl p-1 px-2">
+                                    <button
+                                        class="w-7 h-7 flex items-center justify-center rounded-lg bg-white dark:bg-gray-700 text-gray-500 shadow-sm"><span
+                                            class="material-icons-round text-sm">remove</span></button>
+                                    <span
+                                        class="font-bold text-sm w-4 text-center text-gray-900 dark:text-white">1</span>
+                                    <button
+                                        class="w-7 h-7 flex items-center justify-center rounded-lg bg-white dark:bg-gray-700 text-gray-500 shadow-sm"><span
+                                            class="material-icons-round text-sm">add</span></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4">
+                        <div class="flex items-center gap-2 mb-2 text-xs font-semibold text-gray-500">
+                            <span class="material-icons-round text-sm">notes</span>
+                            Catatan Pesanan
+                        </div>
+                        <textarea
+                            class="w-full bg-gray-50 dark:bg-gray-800/50 border-gray-100 dark:border-gray-800 rounded-xl text-xs focus:ring-primary focus:border-primary placeholder:text-gray-400"
+                            placeholder="Tambah catatan untuk minuman..." rows="2">Kurangi es batu</textarea>
+                    </div>
+                </div>
+                <button
+                    class="w-full py-4 border-2 border-dashed border-gray-200 dark:border-gray-700 rounded-2xl flex items-center justify-center gap-2 text-gray-500 hover:text-primary hover:border-primary transition-colors">
+                    <span class="material-icons-round">add_circle_outline</span>
+                    <span class="font-bold text-sm">Tambah Item Menu</span>
+                </button>
+            </div>
+        </main>
+        <div
+            class="fixed bottom-0 w-full max-w-md bg-white/95 dark:bg-surface-dark/95 backdrop-blur-lg border-t border-gray-100 dark:border-gray-800 p-6 z-30">
+            <div class="flex gap-4">
+                <button
+                    class="flex-1 py-3.5 px-4 rounded-2xl bg-gray-100 dark:bg-gray-800 text-gray-900 dark:text-white font-bold text-sm hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors">
+                    Batal
+                </button>
+                <button
+                    class="flex-[1.5] py-3.5 px-4 rounded-2xl bg-primary text-white font-bold text-sm hover:bg-primary-dark shadow-lg shadow-primary/20 transition-colors flex items-center justify-center gap-2">
+                    <span class="material-icons-round text-sm">save</span>
+                    Simpan Perubahan
+                </button>
+            </div>
+            <div class="flex justify-center mt-4 pointer-events-none">
+                <div class="w-32 h-1 bg-gray-300 dark:bg-gray-600 rounded-full"></div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
